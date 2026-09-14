@@ -9,13 +9,13 @@ export const loopMarkup = `
       Chevir dövrəni hər iki istiqamətdə bağlayır
     </h2>
     <p class="loop__lead">
-      Kar vətəndaşın jesti mətnə və səsə çevrilir, eşidən tərəfin cavabı
+      Eşitmə məhdudiyyətli vətəndaşın jesti mətnə və səsə çevrilir, eşidən tərəfin cavabı
       yenidən jest dilinə qayıdır. Heç bir tərəf gözləmir.
     </p>
   </div>
   <div class="loop__stage">
     <div class="loop__side loop__side--signed" data-frame>
-      <h3 class="loop__side-title">Kar vətəndaş</h3>
+      <h3 class="loop__side-title">Eşitmə məhdudiyyətli şəxs</h3>
       <p class="loop__side-desc">Jest dilində danışır, kameraya baxır.</p>
     </div>
 

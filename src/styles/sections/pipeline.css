@@ -134,15 +134,16 @@
   letter-spacing: 0.03em;
   color: var(--muted);
   margin-bottom: 0.5rem;
-  transition: color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.pipeline__step[data-channel='signed'].is-active .pipeline__number {
-  color: var(--signed);
-}
-
-.pipeline__step[data-channel='spoken'].is-active .pipeline__number {
-  color: var(--spoken);
+/* Kanal rəngi (magenta/mavi) ağ fonda kiçik mətn üçün AA kontrastını keçmir
+   (CLAUDE.md) — aktiv vəziyyət rəng əvəzinə tam kontrastlı ink + ölçü ilə
+   fərqləndirilir. */
+.pipeline__step.is-active .pipeline__number {
+  color: var(--ink);
+  transform: scale(1.08);
 }
 
 .pipeline__step-title {

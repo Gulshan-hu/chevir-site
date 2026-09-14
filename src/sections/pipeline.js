@@ -38,6 +38,7 @@ export const pipelineMarkup = `
             muted
             loop
             playsinline
+            preload="none"
             aria-labelledby="pipeline-step-title-0"
             aria-describedby="pipeline-step-video-desc-0"
           >
@@ -63,6 +64,7 @@ export const pipelineMarkup = `
             muted
             loop
             playsinline
+            preload="none"
             aria-labelledby="pipeline-step-title-1"
             aria-describedby="pipeline-step-video-desc-1"
           >
@@ -118,7 +120,15 @@ export function initPipeline() {
   // əvvəlki addımın (02, gradcam) videosu dəyişmədən qalır.
   const NO_MEDIA_STEP_INDEX = 2
 
+  // Videolar preload="none" ilə gəlir (lazımsız erkən yüklənmənin qarşısını
+  // almaq üçün) — desktop qolunda ilkin setActiveStep(0) səhifə açılan kimi,
+  // scroll-dan əvvəl çağırıldığı üçün .play()-i bölmə görünənə qədər gecikdirmək
+  // lazımdır. mediaReady yalnız aşağıdakı IntersectionObserver kəsişəndə true olur.
+  let mediaReady = false
+  let activeIndex = 0
+
   function setActiveStep(index) {
+    activeIndex = index
     steps.forEach((step, i) => {
       step.classList.toggle('is-active', i === index)
     })
@@ -127,7 +137,7 @@ export function initPipeline() {
       const isActiveVideo = Number(video.dataset.stepVideo) === index
       video.classList.toggle('is-active', isActiveVideo)
       if (isActiveVideo) {
-        video.play().catch(() => {})
+        if (mediaReady) video.play().catch(() => {})
       } else {
         video.pause()
       }
@@ -136,6 +146,20 @@ export function initPipeline() {
       el.classList.toggle('is-active', Number(el.dataset.stepPlaceholder) === index)
     })
   }
+
+  // Mənfi alt rootMargin bölmənin dəqiq ekran kənarına toxunduğu (amma hələ
+  // görünmədiyi) anda tetiklənməsinin qarşısını alır — bölmə həqiqətən bir
+  // qədər görünənə qədər gözləyir.
+  const lazyMediaObserver = new IntersectionObserver(
+    (entries) => {
+      if (!entries.some((entry) => entry.isIntersecting)) return
+      mediaReady = true
+      setActiveStep(activeIndex)
+      lazyMediaObserver.disconnect()
+    },
+    { rootMargin: '0px 0px -100px 0px' }
+  )
+  lazyMediaObserver.observe(section)
 
   function setAllStepsStatic() {
     steps.forEach((step) => step.classList.add('is-active'))

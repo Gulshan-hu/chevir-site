@@ -78,19 +78,25 @@ export const contentMarkup = `
   <div class="problem__stat">
     <p class="problem__number">13&nbsp;000</p>
     <p class="problem__stat-desc">
-      Azərbaycanda kar və zəif eşidən insanların təxmini sayı.
+      Azərbaycanda eşitmə məhdudiyyətli insanların təxmini sayı.
     </p>
   </div>
   <div class="problem__content">
     <h2 id="problem-heading" class="problem__heading">
-      Problem tərcüməçi çatışmazlığı deyil. Problem sistemin eşidən
-      istifadəçiyə görə qurulmasıdır.
+      Yazı həll deyil, maneədir.
     </h2>
-    <ul class="problem__points">
-      <li>Tərcüməçi sayı azdır və xidmət adətən əvvəlcədən sifariş tələb edir.</li>
-      <li>Yazılı Azərbaycan dili Azərbaycan jest dilinin əvəzedicisi deyil.</li>
-      <li>Nəticədə rəqəmsal xidmətlərin çoxu kar istifadəçi üçün əlçatmaz qalır.</li>
-    </ul>
+    <div class="problem__body">
+      <p class="problem__paragraph">
+        Eşitmə məhdudiyyəti ilə doğulan insan Azərbaycan dilini heç vaxt eşitmir.
+        Onu ikinci dil kimi öyrənir. Poliklinikada anket doldurmaq, bank
+        müqaviləsi oxumaq — bunlar onun üçün yad dildə sənəd doldurmaqdır.
+      </p>
+      <p class="problem__paragraph">
+        Mövcud əlçatanlıq alətləri isə yalnız bir istiqamətdə işləyir: eşidəndən
+        eşitmə məhdudiyyətli şəxsə. Altyazı var. Əks istiqamət — jest dilində
+        deyilənin eşidənə çatması — tamamilə boşdur.
+      </p>
+    </div>
   </div>
 </section>
 
@@ -123,10 +129,15 @@ export const contentMarkup = `
 
 <section class="values reveal" aria-labelledby="values-heading">
   <p class="values__slogan">
-    Kar icmanın öz şüarı: “Biz olmadan bizim haqqımızda heç nə.”
+    Eşitmə məhdudiyyətli icmanın öz şüarı: “Biz olmadan bizim haqqımızda heç nə.”
   </p>
   <p id="values-heading" class="values__statement">
-    Kar icma olmadan kar icma haqqında heç nə.
+    Eşitmə məhdudiyyətli icma olmadan onlar haqqında heç nə.
+  </p>
+  <p class="values__principle">
+    Eşitmə məhdudiyyətli istifadəçi öz ana dilində məzmun oxumaq və yaratmaq
+    üçün heç vaxt ödəniş etməyəcək. Əlçatanlıq ödəniş divarının arxasında
+    ola bilməz.
   </p>
 </section>
 
@@ -172,6 +183,19 @@ export const contentMarkup = `
       modellərin real çıxışlarıdır.
     </p>
   </div>
+  <div class="results__accuracy">
+    <p class="results__accuracy-number">84,85%</p>
+    <p class="results__accuracy-desc">
+      AzSLD — 30 000 annotasiyalı video üzərində öyrədilmiş tanıma
+      modelimizin dəqiqliyi.
+    </p>
+    <p class="results__accuracy-caveat">
+      Bu sahədə adətən 95%-dən yuxarı rəqəmlər elan olunur. Amma həmin rəqəm
+      eyni insanların videoları həm öyrətmədə, həm testdə olanda alınır.
+      Model heç görmədiyi yeni bir insanı tanımalı olanda dəqiqlik 62%-ə
+      düşür. Biz birinci rəqəmi ümumiyyətlə göstərmirik.
+    </p>
+  </div>
   <div class="results__grid">
     <figure class="results__card">
       <div class="results__video-frame">
@@ -181,6 +205,7 @@ export const contentMarkup = `
           muted
           loop
           playsinline
+          preload="none"
           aria-labelledby="results-title-0"
           aria-describedby="results-desc-0"
         >
@@ -203,6 +228,7 @@ export const contentMarkup = `
           muted
           loop
           playsinline
+          preload="none"
           aria-labelledby="results-title-1"
           aria-describedby="results-desc-1"
         >
@@ -224,23 +250,20 @@ export const contentMarkup = `
   <h2 id="impact-heading" class="impact__heading">Təsir</h2>
   <div class="impact__grid">
     <div class="impact__item">
-      <p class="impact__number">13k</p>
-      <p class="impact__desc">
-        Azərbaycanda kar və zəif eşidən insan tərcüməyə ehtiyac duyur.
-      </p>
+      <p class="impact__number">13&nbsp;000</p>
+      <p class="impact__desc">Azərbaycanda eşitmə məhdudiyyətli insan.</p>
     </div>
     <div class="impact__item">
-      <p class="impact__number">2</p>
-      <p class="impact__desc">
-        İstiqamətdə işləyir — jestdən danışığa və danışıqdan jestə.
-      </p>
+      <p class="impact__number">430 milyon</p>
+      <p class="impact__desc">Dünyada eşitmə itkisi yaşayan insan.</p>
+      <p class="impact__source">Mənbə: Ümumdünya Səhiyyə Təşkilatı.</p>
     </div>
     <div class="impact__item">
-      <p class="impact__number">1-ci</p>
+      <p class="impact__number">1 trilyon dollar</p>
       <p class="impact__desc">
-        Azərbaycan jest dili üçün xüsusi hazırlanmış rəqəmsal tərcümə
-        sistemi.
+        Həll olunmamış eşitmə itkisinin illik qlobal xərci.
       </p>
+      <p class="impact__source">Mənbə: Ümumdünya Səhiyyə Təşkilatı.</p>
     </div>
   </div>
 </section>
@@ -261,7 +284,7 @@ export const contentMarkup = `
       <span class="roadmap__number">02</span>
       <h3 class="roadmap__item-title">Müstəqil mobil tətbiq</h3>
       <p class="roadmap__item-desc">
-        Kar və eşidən istifadəçilərin birbaşa öz telefonundan istifadə edə
+        Eşitmə məhdudiyyətli və eşidən istifadəçilərin birbaşa öz telefonundan istifadə edə
         biləcəyi tətbiq.
       </p>
     </li>
@@ -274,6 +297,35 @@ export const contentMarkup = `
       </p>
     </li>
   </ol>
+</section>
+
+<section class="trust reveal" aria-labelledby="trust-heading">
+  <h2 id="trust-heading" class="trust__heading">Arxamızda nə dayanır</h2>
+  <p class="trust__lead">
+    Chevir sıfırdan başlamır — arxasında dərc olunmuş tədqiqat, açıq dataset
+    və icma ilə real əməkdaşlıq var.
+  </p>
+  <div class="trust__grid">
+    <div class="trust__item">
+      <h3 class="trust__item-title">AzSLD dataseti</h3>
+      <p class="trust__item-desc">Azərbaycan jest dili üçün ilk açıq dataset.</p>
+      <p class="trust__item-meta">
+        Alishzade, N. &amp; Hasanov, J. (2025), Data in Brief, DOI:
+        10.1016/j.dib.2024.111230
+      </p>
+    </div>
+    <div class="trust__item">
+      <h3 class="trust__item-title">Akademik baza</h3>
+      <p class="trust__item-desc">
+        Qarabağ Universiteti, Bakı Dövlət Universiteti, AMEA Molekulyar
+        Biologiya İnstitutu, MRC LMB Cambridge.
+      </p>
+    </div>
+    <div class="trust__item">
+      <h3 class="trust__item-title">İcma əməkdaşlığı</h3>
+      <p class="trust__item-desc">"Karlara Dəstək" İctimai Birliyi.</p>
+    </div>
+  </div>
 </section>
 
 <section class="team reveal" aria-labelledby="team-heading">
@@ -314,7 +366,7 @@ export const contentMarkup = `
     <h2 id="contact-heading" class="contact__heading">Bizə nə lazımdır</h2>
     <ul class="contact__asks">
       <li>Pilot tərəfdaşlar — dövlət qurumu, bank və ya xəstəxana.</li>
-      <li>Kar icma ilə davamlı əməkdaşlıq.</li>
+      <li>Eşitmə məhdudiyyətli icma ilə davamlı əməkdaşlıq.</li>
     </ul>
     <a class="contact__cta" href="mailto:hello@chevirapp.com">hello@chevirapp.com</a>
     <p class="contact__note">(müvəqqəti ünvandır)</p>
@@ -357,8 +409,8 @@ function setupResultsVideos() {
   // doğma piksel ölçüsündən böyüməsin (böyüdükdə bulanıqlaşır).
   const capNativeSize = (video) => {
     if (!video.videoWidth || !video.videoHeight) return
-    video.style.maxWidth = `${video.videoWidth}px`
-    video.style.maxHeight = `${video.videoHeight}px`
+    video.style.maxWidth = `min(100%, ${video.videoWidth}px)`
+    video.style.maxHeight = `min(100%, ${video.videoHeight}px)`
   }
 
   videos.forEach((video) => {

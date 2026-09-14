@@ -123,8 +123,8 @@
    #splash-in daxilindədir, .hero__logo-slot-un xaricində, ona görə bu
    qayda ona TƏSİR ETMİR (əks halda splash animasiyası da gizli qalardı). */
 .hero__logo-slot .brand-logo {
-  width: min(46vh, 420px);
-  height: min(46vh, 420px);
+  width: min(46vh, 80vw, 420px);
+  height: min(46vh, 80vw, 420px);
   overflow: visible;
   color: #ffffff;
   opacity: 0;

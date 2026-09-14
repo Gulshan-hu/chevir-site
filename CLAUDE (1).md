@@ -116,6 +116,8 @@ Bu, kar insanlar üçün qurulan məhsuldur. Aşağıdakılar estetik seçim dey
 - Büdcə rəqəmləri, SWOT-un zəif tərəflər sütunu və 150 000 AZN saytda yoxdur. Tələb yalnız
   "pilot tərəfdaş axtarırıq"dır.
 - AZ və EN bərabər hüquqludur. EN "tərcümə" kimi görünməməlidir.
+- Terminologiya: "kar" sözü işlədilmir. Həmişə "eşitmə məhdudiyyətli" yazılır.
+  Bu, komandanın rəsmi qərarıdır.
 
 ## Qadağan siyahısı
 

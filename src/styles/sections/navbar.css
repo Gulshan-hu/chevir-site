@@ -25,6 +25,7 @@
 }
 
 .navbar__brand {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
@@ -34,6 +35,13 @@
      toxunulmazdır (visibility, hit-testi və tab sırasını da söndürür) —
      preloader.js uçuş bitəndə .is-revealed sinfini verir. */
   visibility: hidden;
+}
+
+/* Vizual ölçünü böyütmədən toxunma hədəfini 44px minimuma çatdırır. */
+.navbar__brand::before {
+  content: '';
+  position: absolute;
+  inset: -9px -6px;
 }
 
 .navbar.is-revealed .navbar__brand {
@@ -65,6 +73,7 @@
 }
 
 .navbar__cta {
+  position: relative;
   display: inline-block;
   flex-shrink: 0;
   padding: 0.6rem 1.4rem;
@@ -75,6 +84,13 @@
   font-weight: 600;
   text-decoration: none;
   transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Vizual ölçünü böyütmədən toxunma hədəfini 44px minimuma çatdırır. */
+.navbar__cta::before {
+  content: '';
+  position: absolute;
+  inset: -3px -4px;
 }
 
 .navbar__cta:hover {

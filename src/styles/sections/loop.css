@@ -49,6 +49,15 @@
     gap: 1.5rem;
     min-height: 42vh;
   }
+
+  /* "Eşitmə məhdudiyyətli şəxs" 3 sətrə bölünür, "Xidmət işçisi" 1 sətrə —
+     bərabər hündürlük olmasa iki qutu arasında nəzərəçarpan fərq yaranır. */
+  .loop__side {
+    min-height: 258px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 .loop__side {

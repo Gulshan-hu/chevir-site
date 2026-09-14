@@ -28,7 +28,8 @@
 .results,
 .impact,
 .roadmap,
-.team {
+.team,
+.trust {
   padding: clamp(3rem, 7vw, 5.5rem) clamp(1.25rem, 5vw, 4rem);
   max-width: 72rem;
   margin: 0 auto;
@@ -40,7 +41,8 @@
 .results__heading,
 .impact__heading,
 .roadmap__heading,
-.team__heading {
+.team__heading,
+.trust__heading {
   font-size: var(--fs-h2);
   font-weight: 600;
   letter-spacing: -0.01em;
@@ -219,33 +221,18 @@
   max-width: 36rem;
 }
 
-.problem__points {
+.problem__body {
   margin: 1.75rem 0 0;
-  padding: 0;
-  list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.9rem;
+  gap: 1.1rem;
   max-width: 34rem;
 }
 
-.problem__points li {
-  position: relative;
-  padding-left: 1.25rem;
+.problem__paragraph {
   color: var(--muted);
   font-size: var(--fs-body);
   line-height: 1.55;
-}
-
-.problem__points li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0.65em;
-  width: 0.6rem;
-  height: 2px;
-  background: currentColor;
-  opacity: 0.5;
 }
 
 /* ---------- 2. Fərqimiz nədir ---------- */
@@ -302,6 +289,14 @@
   margin: 0 auto;
 }
 
+.values__principle {
+  margin: 1.75rem auto 0;
+  max-width: 34rem;
+  color: #c9c3bc;
+  font-size: var(--fs-small);
+  line-height: 1.55;
+}
+
 /* ---------- 4. Harada işləyir ---------- */
 
 .usecases__grid {
@@ -353,6 +348,34 @@
   margin-top: 0.75rem;
   color: var(--muted);
   font-size: var(--fs-body);
+  line-height: 1.55;
+}
+
+.results__accuracy {
+  margin-top: 2rem;
+  max-width: 40rem;
+}
+
+.results__accuracy-number {
+  font-size: var(--fs-h1);
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.results__accuracy-desc {
+  margin-top: 0.6rem;
+  color: var(--muted);
+  font-size: var(--fs-body);
+  line-height: 1.5;
+}
+
+.results__accuracy-caveat {
+  margin-top: 0.9rem;
+  max-width: 34rem;
+  color: var(--muted);
+  font-size: var(--fs-small);
   line-height: 1.55;
 }
 
@@ -457,6 +480,13 @@
   line-height: 1.5;
 }
 
+.impact__source {
+  margin-top: 0.4rem;
+  color: var(--muted);
+  font-size: var(--fs-small);
+  opacity: 0.8;
+}
+
 /* ---------- 7. Mərhələlər ---------- */
 
 .roadmap__list {
@@ -499,6 +529,50 @@
   color: var(--muted);
   font-size: var(--fs-body);
   line-height: 1.55;
+}
+
+/* ---------- 7b. Etibar ---------- */
+
+.trust__lead {
+  margin-top: 0.75rem;
+  max-width: 38rem;
+  color: var(--muted);
+  font-size: var(--fs-body);
+  line-height: 1.55;
+}
+
+.trust__grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 700px) {
+  .trust__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+.trust__item-title {
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.trust__item-desc {
+  margin-top: 0.6rem;
+  color: var(--muted);
+  font-size: var(--fs-body);
+  line-height: 1.55;
+}
+
+.trust__item-meta {
+  margin-top: 0.4rem;
+  color: var(--muted);
+  font-size: var(--fs-small);
+  opacity: 0.8;
 }
 
 /* ---------- 8. Komanda ---------- */
@@ -644,6 +718,20 @@
 
 .contact__cta:hover {
   transform: translateY(-2px);
+}
+
+/* .contact__wordmark böyük ekranlarda çox hündür olur və altındakı mətnin
+   üstünə düşür — wordmark-ın özünə toxunmadan, mətnin arxasına sıx oturan
+   tünd fon əlavə olunur ki, hansı hərfin üstündə olursa olsun mətn WCAG AA
+   kontrastını qorusun (yumşaq, get-gedə solan vignette bunu təmin etmədi —
+   ölçmüşəm: wordmark hərfinin üstündə kontrast 2.6–3.4:1 qalırdı). */
+.contact__note,
+.contact__meta {
+  width: fit-content;
+  margin-inline: auto;
+  padding: 0.4rem 1rem;
+  border-radius: 0.85rem;
+  background: rgba(22, 19, 15, 0.95);
 }
 
 .contact__note {
