@@ -1,5 +1,13 @@
 /* ---------- Navbar ---------- */
 
+:root {
+  /* Sabit (1.1rem padding, ölçüsü dəyişməyən logo/mətn) — ölçülüb: ~77px,
+     bufer üçün bir qədər artıq. scroll-margin-top üçün digər bölmə
+     fayllarında istifadə olunur ki, anchor/fokus scroll-u başlıqları
+     navbar arxasında qoymasın. */
+  --navbar-h: 5.5rem;
+}
+
 .navbar {
   /* Bütün bölmələr tünddür (bax CLAUDE.md) — naviqasiya həmişə açıq mətnli,
      heç bir tünd/açıq keçid yoxdur. Yalnız scroll edildikdə tünd-şəffaf

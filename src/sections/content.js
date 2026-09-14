@@ -135,12 +135,10 @@ export const contentMarkup = `
 </section>
 
 <section class="values reveal" aria-labelledby="values-heading">
-  <p class="values__slogan">
-    Eşitmə məhdudiyyətli icmanın öz şüarı: “Biz olmadan bizim haqqımızda heç nə.”
-  </p>
   <p id="values-heading" class="values__statement">
-    Eşitmə məhdudiyyətli icma olmadan onlar haqqında heç nə.
+    Biz olmadan bizim haqqımızda heç nə.
   </p>
+  <p class="values__slogan">Eşitmə məhdudiyyətli icmanın şüarı.</p>
   <p class="values__principle">
     Eşitmə məhdudiyyətli istifadəçi öz ana dilində məzmun oxumaq və yaratmaq
     üçün heç vaxt ödəniş etməyəcək. Əlçatanlıq ödəniş divarının arxasında
@@ -258,15 +256,18 @@ export const contentMarkup = `
   <div class="impact__grid">
     <div class="impact__item">
       <p class="impact__number">13&nbsp;000</p>
+      <p class="impact__unit" aria-hidden="true"></p>
       <p class="impact__desc">Azərbaycanda eşitmə məhdudiyyətli insan.</p>
     </div>
     <div class="impact__item">
-      <p class="impact__number">430 milyon</p>
+      <p class="impact__number">430</p>
+      <p class="impact__unit">milyon</p>
       <p class="impact__desc">Dünyada eşitmə itkisi yaşayan insan.</p>
       <p class="impact__source">Mənbə: Ümumdünya Səhiyyə Təşkilatı.</p>
     </div>
     <div class="impact__item">
-      <p class="impact__number">1 trilyon dollar</p>
+      <p class="impact__number">1</p>
+      <p class="impact__unit">trilyon dollar</p>
       <p class="impact__desc">
         Həll olunmamış eşitmə itkisinin illik qlobal xərci.
       </p>
@@ -307,11 +308,13 @@ export const contentMarkup = `
 </section>
 
 <section class="trust reveal" aria-labelledby="trust-heading">
-  <h2 id="trust-heading" class="trust__heading">Arxamızda nə dayanır</h2>
-  <p class="trust__lead">
-    Chevir sıfırdan başlamır — arxasında dərc olunmuş tədqiqat, açıq dataset
-    və icma ilə real əməkdaşlıq var.
-  </p>
+  <div class="trust__intro">
+    <h2 id="trust-heading" class="trust__heading">Arxamızda nə dayanır</h2>
+    <p class="trust__lead">
+      Chevir sıfırdan başlamır — arxasında dərc olunmuş tədqiqat, açıq dataset
+      və icma ilə real əməkdaşlıq var.
+    </p>
+  </div>
   <div class="trust__grid">
     <div class="trust__item">
       <h3 class="trust__item-title">AzSLD dataseti</h3>
@@ -343,22 +346,31 @@ export const contentMarkup = `
       <h3 class="team__name">Sitara Aghayeva</h3>
       <p class="team__role">Baş İcraçı Direktor</p>
       <p class="team__bio">
-        Məhsulu bazara çıxarmaq və pilot tərəfdaşlıqları qurmaqla məşğul
-        olur.
+        Data Science və maşın öyrənməsi üzrə yeddi, risk idarəçiliyi üzrə
+        dörd il təcrübə. IU Beynəlxalq Tətbiqi Elmlər Universitetində
+        magistr, beynəlxalq Risk və Süni İntellekt sertifikatı sahibi.
+        Chevir-in icrasına və pilot tərəfdaşlıqlarına rəhbərlik edir.
       </p>
     </div>
     <div class="team__card">
       <h3 class="team__name">Lala Ibadullayeva</h3>
       <p class="team__role">Baş Tədqiqat Direktoru</p>
       <p class="team__bio">
-        AJD dilçiliyi və tanınma modellərinin dəqiqliyinə cavabdehdir.
+        AMEA Molekulyar Biologiya İnstitutunda hesablamalı struktur
+        biologiyası üzrə PhD namizədi, Bakı Dövlət Universitetində süni
+        intellekt həlləri qurur. Cambridge MRC LMB-də tədqiqat təcrübəsi.
+        Chevir-in hərəkət tanıma və jest tərcüməsi modellərinin dərin
+        öyrənmə tədqiqatına rəhbərlik edir.
       </p>
     </div>
     <div class="team__card">
       <h3 class="team__name">Nigar Alishzade</h3>
       <p class="team__role">Baş Texnologiya Direktoru</p>
       <p class="team__bio">
-        Backend, API və məlumatların təhlükəsizliyini idarə edir.
+        PhD namizədi, Qarabağ Universitetində kompüter elmləri müəllimi və
+        "Karlara Dəstək" İctimai Birliyinin icraçı üzvü. AzSLD datasetinin
+        və bir sıra jest dili tanıma məqalələrinin müəllifidir. Chevir-in
+        texnologiya inkişafına və icma ilə əlaqələrinə rəhbərlik edir.
       </p>
     </div>
   </div>

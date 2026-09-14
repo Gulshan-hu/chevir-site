@@ -26,27 +26,69 @@
 .difference,
 .usecases,
 .results,
-.impact,
 .roadmap,
 .team,
 .trust {
-  padding: clamp(3rem, 7vw, 5.5rem) clamp(1.25rem, 5vw, 4rem);
   max-width: 72rem;
   margin: 0 auto;
+}
+
+.problem,
+.results {
+  padding: clamp(3rem, 7vw, 5.5rem) clamp(1.25rem, 5vw, 4rem);
+}
+
+/* Sıx qrid bölmələri — Fərqimiz, Harada işləyir, Komanda: eyni grid
+   strukturunu saxlayır, yalnız boşluq sıxılıb. */
+.difference,
+.usecases,
+.team {
+  padding: clamp(2.25rem, 5.5vw, 4rem) clamp(1.25rem, 5vw, 4rem);
+}
+
+.roadmap {
+  padding: clamp(2.75rem, 6vw, 4.5rem) clamp(1.25rem, 5vw, 4rem);
+}
+
+/* Sakit bölmə — Arxamızda nə dayanır: az padding, dar sütun. */
+.trust {
+  padding: clamp(2rem, 4.5vw, 3.25rem) clamp(1.25rem, 5vw, 4rem);
+}
+
+/* Güclü bölmə — Təsir: daha geniş konteyner, daha çox nəfəs. */
+.impact {
+  max-width: 88rem;
+  margin: 0 auto;
+  padding: clamp(3.5rem, 8vw, 6rem) clamp(1.25rem, 5vw, 4rem);
 }
 
 .problem__heading,
 .difference__heading,
 .usecases__heading,
 .results__heading,
-.impact__heading,
 .roadmap__heading,
-.team__heading,
-.trust__heading {
+.team__heading {
   font-size: var(--fs-h2);
   font-weight: 600;
   letter-spacing: -0.01em;
   max-width: 34rem;
+  scroll-margin-top: var(--navbar-h);
+}
+
+.impact__heading {
+  font-size: clamp(2.4rem, 1.7rem + 2.8vw, 3.75rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  max-width: 34rem;
+  scroll-margin-top: var(--navbar-h);
+}
+
+.trust__heading {
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  max-width: 34rem;
+  scroll-margin-top: var(--navbar-h);
 }
 
 /* ---------- Fon dekorları (loqo qövsləri / nöqtə buludu) ---------- */
@@ -238,16 +280,16 @@
 /* ---------- 2. Fərqimiz nədir ---------- */
 
 .difference__grid {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 @media (min-width: 700px) {
   .difference__grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
+    gap: 2rem;
   }
 }
 
@@ -273,13 +315,6 @@
   text-align: center;
 }
 
-.values__slogan {
-  font-size: var(--fs-small);
-  opacity: 0.75;
-  max-width: 30rem;
-  margin: 0 auto 1.25rem;
-}
-
 .values__statement {
   font-size: clamp(2.6rem, 2rem + 3.6vw, 5rem);
   font-weight: 600;
@@ -287,6 +322,13 @@
   line-height: 1.15;
   max-width: 50rem;
   margin: 0 auto;
+}
+
+.values__slogan {
+  font-size: var(--fs-small);
+  opacity: 0.75;
+  max-width: 30rem;
+  margin: 1rem auto 0;
 }
 
 .values__principle {
@@ -300,21 +342,21 @@
 /* ---------- 4. Harada işləyir ---------- */
 
 .usecases__grid {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.25rem;
+  gap: 1rem;
 }
 
 @media (min-width: 700px) {
   .usecases__grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
 }
 
 .usecases__item {
-  padding: 1.5rem;
+  padding: 1.25rem;
   border-radius: 1.25rem;
   border: 1px solid rgba(26, 24, 23, 0.1);
 }
@@ -420,7 +462,7 @@
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
-  background: #eeece8;
+  background: #16130f;
   border-radius: 1.25rem;
   overflow: hidden;
 }
@@ -440,6 +482,7 @@
   margin-top: 1rem;
   font-size: var(--fs-h3);
   font-weight: 600;
+  scroll-margin-top: var(--navbar-h);
 }
 
 .results__card-desc {
@@ -452,7 +495,7 @@
 /* ---------- 6. Təsir ---------- */
 
 .impact__grid {
-  margin-top: 2rem;
+  margin-top: 2.5rem;
   display: grid;
   grid-template-columns: 1fr;
   gap: 2.5rem;
@@ -461,15 +504,30 @@
 @media (min-width: 700px) {
   .impact__grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: clamp(2rem, 5vw, 4rem);
   }
 }
 
 .impact__number {
-  font-size: var(--fs-h1);
+  font-size: clamp(3.5rem, 2.4rem + 5.5vw, 7rem);
   font-weight: 700;
   color: var(--ink);
   letter-spacing: -0.02em;
   line-height: 1;
+  white-space: nowrap;
+}
+
+/* "13 000"-in vahidi yoxdur — boş, aria-hidden .impact__unit yenə render
+   olunur ki, min-height eyni sətri tutsun və üç sütunun izah mətni
+   (impact__desc) eyni xətdən başlasın. */
+.impact__unit {
+  margin-top: 0.15rem;
+  min-height: 1.3em;
+  line-height: 1.3;
+  color: var(--muted);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
 .impact__desc {
@@ -490,7 +548,8 @@
 /* ---------- 7. Mərhələlər ---------- */
 
 .roadmap__list {
-  margin: 2rem 0 0;
+  position: relative;
+  margin: 2.25rem 0 0;
   padding: 0;
   list-style: none;
   display: flex;
@@ -504,18 +563,42 @@
     gap: 2.5rem;
   }
 
+  /* Üfüqi zaman xətti: nöqtələrin mərkəzindən keçir. left/right dəyərləri
+     dairənin radiusu (1.25rem) və list-in gap-i (2.5rem) əsasında hesablanıb
+     ki, xətt birinci və üçüncü nöqtənin mərkəzində başlayıb bitsin (3 bərabər
+     sütun fərz olunur). */
+  .roadmap__list::before {
+    content: '';
+    position: absolute;
+    top: 1.25rem;
+    left: 1.25rem;
+    right: calc(33.333% - 2.9167rem);
+    height: 1px;
+    background: var(--muted);
+    opacity: 0.35;
+    z-index: 0;
+  }
+
   .roadmap__item {
     flex: 1 1 0;
   }
 }
 
 .roadmap__number {
-  display: block;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--paper);
   font-size: var(--fs-small);
   font-weight: 700;
-  letter-spacing: 0.03em;
-  color: var(--ink);
-  margin-bottom: 0.5rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.75rem;
 }
 
 .roadmap__item-title {
@@ -531,45 +614,108 @@
   line-height: 1.55;
 }
 
-/* ---------- 7b. Etibar ---------- */
+/* ---------- 7b. Etibar — alçaq üfüqi lent ---------- */
+
+.trust__heading {
+  line-height: 1.15;
+}
+
+.trust {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 900px) {
+  .trust {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 3rem;
+  }
+}
+
+.trust__intro {
+  max-width: 26rem;
+}
+
+@media (min-width: 900px) {
+  .trust__intro {
+    flex: 0 0 16rem;
+  }
+}
 
 .trust__lead {
-  margin-top: 0.75rem;
-  max-width: 38rem;
+  margin-top: 0.6rem;
   color: var(--muted);
-  font-size: var(--fs-body);
+  font-size: var(--fs-small);
   line-height: 1.55;
 }
 
 .trust__grid {
-  margin-top: 2rem;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 900px) {
   .trust__grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
+    flex: 1 1 0%;
+    min-width: 0;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 0;
+  }
+}
+
+/* Mobil: üfüqi ayırıcı (üstdə). ≥900px: şaquli ayırıcı (soldan), kart/qutu
+   görünüşü yoxdur — yalnız nazik xətt. */
+.trust__item {
+  padding-top: 1.1rem;
+  border-top: 1px solid rgba(26, 24, 23, 0.12);
+}
+
+.trust__item:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+@media (min-width: 900px) {
+  .trust__item {
+    flex: 1 1 0;
+    padding-top: 0;
+    padding-left: 1.75rem;
+    border-top: none;
+    border-left: 1px solid rgba(26, 24, 23, 0.12);
+  }
+
+  .trust__item:first-child {
+    padding-left: 0;
+    border-left: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .trust__item {
+    border-top-color: rgba(241, 237, 233, 0.16);
+    border-left-color: rgba(241, 237, 233, 0.16);
   }
 }
 
 .trust__item-title {
-  font-size: var(--fs-h3);
+  font-size: var(--fs-body);
   font-weight: 600;
   letter-spacing: -0.01em;
 }
 
 .trust__item-desc {
-  margin-top: 0.6rem;
+  margin-top: 0.4rem;
   color: var(--muted);
-  font-size: var(--fs-body);
+  font-size: var(--fs-small);
   line-height: 1.55;
 }
 
 .trust__item-meta {
-  margin-top: 0.4rem;
+  margin-top: 0.35rem;
   color: var(--muted);
   font-size: var(--fs-small);
   opacity: 0.8;
@@ -578,22 +724,22 @@
 /* ---------- 8. Komanda ---------- */
 
 .team__grid {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 @media (min-width: 700px) {
   .team__grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
+    gap: 2rem;
   }
 }
 
 .team__card {
   border-top: 1px solid rgba(26, 24, 23, 0.12);
-  padding-top: 1.25rem;
+  padding-top: 1rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -631,8 +777,9 @@
   overflow: hidden;
   background: #16130f;
   color: #f1ede9;
-  padding: clamp(4.5rem, 11vw, 8rem) clamp(1.25rem, 5vw, 4rem) clamp(2.5rem, 6vw, 3.5rem);
+  padding: clamp(4.5rem, 11vw, 8rem) clamp(1.25rem, 5vw, 4rem) clamp(1.5rem, 4vw, 2.5rem);
   text-align: center;
+  scroll-margin-top: var(--navbar-h);
 }
 
 .contact__bg {
@@ -659,9 +806,9 @@
 }
 
 /* Hero-nun .hero__wordmark-ı ilə EYNİ ölçü/mövqe parametrləri (bax
-   hero.css) — tam eni tutan, iri. Fon elementi olduğu üçün kontent
-   mətninin (z-index:3) altında qalır, üstünə düşməsi problem deyil —
-   mətn həmişə oxunaqlı qalır. */
+   hero.css) — tam eni tutan, iri, HEÇ vaxt kəsilmir (hero-dakı kimi).
+   Mətnin üstünə düşməməsi indi .contact__content-in aşağı boşluğu ilə
+   həll olunur (bax aşağı), fon/pill ilə deyil. */
 .contact__wordmark {
   position: absolute;
   left: 0;
@@ -672,14 +819,19 @@
   aspect-ratio: 81 / 24;
   height: auto;
   color: #f1ede9;
-  opacity: 0.62;
+  opacity: 0.5;
   filter: blur(3px);
   pointer-events: none;
 }
 
+/* Aşağı boşluq wordmark-ın öz hündürlüyünə (aspect-ratio 81/24 → eni ilə
+   xətti mütənasib) uyğunlaşdırılıb ki, məzmun (xüsusilə son sətir —
+   contact__meta) həmişə wordmark-ın yuxarı kənarından yuxarıda qalsın,
+   üst-üstə düşmə olmasın. */
 .contact__content {
   position: relative;
   z-index: 3;
+  padding-bottom: calc(24 / 81 * 100vw + 3rem);
 }
 
 .contact__heading {
@@ -720,18 +872,10 @@
   transform: translateY(-2px);
 }
 
-/* .contact__wordmark böyük ekranlarda çox hündür olur və altındakı mətnin
-   üstünə düşür — wordmark-ın özünə toxunmadan, mətnin arxasına sıx oturan
-   tünd fon əlavə olunur ki, hansı hərfin üstündə olursa olsun mətn WCAG AA
-   kontrastını qorusun (yumşaq, get-gedə solan vignette bunu təmin etmədi —
-   ölçmüşəm: wordmark hərfinin üstündə kontrast 2.6–3.4:1 qalırdı). */
 .contact__note,
 .contact__meta {
   width: fit-content;
   margin-inline: auto;
-  padding: 0.4rem 1rem;
-  border-radius: 0.85rem;
-  background: rgba(22, 19, 15, 0.95);
 }
 
 .contact__note {
