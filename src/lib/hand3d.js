@@ -41,6 +41,11 @@ function computeHandFraming(poses) {
 const HAND_FRAME = computeHandFraming(HAND_POSES)
 
 const isDesktop = window.matchMedia(BREAKPOINTS.isDesktop).matches
+const isCoarsePointer = window.matchMedia('(pointer: coarse)').matches
+// Toxunma cihazlarında (coarse pointer və ya <980px) barmaqla scroll əl
+// çevirməyə getməsin deyə orbit idarəsi tamamilə sönür — əl yalnız avtomatik
+// fırlanır. Masaüstündə kursor idarəsi olduğu kimi qalır.
+const enablePointerOrbit = isDesktop && !isCoarsePointer
 
 // Radiuslu sferanı (bütün pozalar + istənilən fırlanma bucağı — sfera
 // fırlanmaya görə dəyişməz olduğu üçün) kadra tam sığdıran kamera məsafəsi.
@@ -347,11 +352,17 @@ export function initHand3D(canvas) {
     gsap.to(userOffset, { x: 0, y: 0, duration: 1.4, ease: 'power2.out' })
   }
 
-  canvas.style.touchAction = 'none'
-  canvas.addEventListener('pointerdown', onPointerDown)
-  canvas.addEventListener('pointermove', onPointerMove)
-  canvas.addEventListener('pointerup', onPointerUp)
-  canvas.addEventListener('pointercancel', onPointerUp)
+  if (enablePointerOrbit) {
+    canvas.style.touchAction = 'none'
+    canvas.addEventListener('pointerdown', onPointerDown)
+    canvas.addEventListener('pointermove', onPointerMove)
+    canvas.addEventListener('pointerup', onPointerUp)
+    canvas.addEventListener('pointercancel', onPointerUp)
+  } else {
+    // Canvas toxunma/scroll hadisələrini tutmasın — barmaq sürüşdürməsi
+    // altındakı səhifəyə keçsin.
+    canvas.style.pointerEvents = 'none'
+  }
 
   // ---- fon: noise dalğa + grain shader-i (yalnız masaüstündə) ----
   let wavePlane = null
