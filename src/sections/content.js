@@ -104,24 +104,31 @@ export const contentMarkup = `
   <h2 id="difference-heading" class="difference__heading">Fərqimiz nədir</h2>
   <div class="difference__grid">
     <div class="difference__item">
-      <h3 class="difference__item-title">Azərbaycan jest dili üçün qurulub</h3>
+      <h3 class="difference__item-title">Bir skelet, iki istiqamət</h3>
       <p class="difference__item-desc">
-        Model başqa ölkənin jest dilindən uyğunlaşdırılmayıb — əvvəldən AJD
-        üzərində öyrədilib.
+        Tanıma və istehsal ayrı sistemlər deyil. Hər ikisi eyni skelet
+        təsvirindən qidalanır — kameradan çıxarılan nöqtələr həm jesti
+        oxumaq, həm də avatarı hərəkətə gətirmək üçün işlədilir. Bu, iki
+        istiqamətin uyğunluğunu arxitektura səviyyəsində təmin edir.
       </p>
     </div>
     <div class="difference__item">
-      <h3 class="difference__item-title">İkitərəflilik sonradan əlavə deyil</h3>
+      <h3 class="difference__item-title">Mimika sonradan əlavə deyil</h3>
       <p class="difference__item-desc">
-        Sistem həm jestdən danışığa, həm danışıqdan jestə tərcümə üçün
-        əvvəldən qurulub.
+        Jest dilində inkar, sual və şərt üz və baş hərəkətləri ilə ötürülür.
+        Sahənin aparıcı kommersiya oyunçusu bu elementlərin səlis
+        istehsalını həll olunmamış problem kimi elan edir. Bizdə bu,
+        sonradan gələcək yaxşılaşdırma deyil — arxitekturanın başlanğıc
+        tələbidir.
       </p>
     </div>
     <div class="difference__item">
-      <h3 class="difference__item-title">Ayrıca tətbiq deyil, infrastruktur</h3>
+      <h3 class="difference__item-title">İcma ilə yoxlama</h3>
       <p class="difference__item-desc">
-        Mövcud bank, dövlət və səhiyyə sistemlərinə API ilə inteqrasiya
-        olunur.
+        Model çıxışları laboratoriya metrikası ilə deyil, ana dili jest
+        dili olan insanların anlama səviyyəsi ilə yoxlanılır. Nəzəri
+        olaraq uğurlu görünən, praktikada isə anlaşılmayan nəticələrin
+        qarşısı belə alınır.
       </p>
     </div>
   </div>
