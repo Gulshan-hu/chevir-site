@@ -1,6 +1,7 @@
 import gsap from 'gsap'
 import { prefersReducedMotion } from '../lib/gsapSetup.js'
 import { HAND_POSE_OPEN, HAND_CONNECTIONS } from '../lib/handPoses.js'
+import { initLineCarousel } from '../lib/lineCarousel.js'
 
 // public/ altındakı asset-lərə mütləq "/..." yolla deyil, BASE_URL ilə
 // istinad olunur (kök yolda "/" verir, amma alt qovluqda yayımlansa da işləyər).
@@ -251,14 +252,17 @@ export const contentMarkup = `
   </div>
 </section>
 
-<section class="impact reveal" aria-labelledby="impact-heading">
-  <h2 id="impact-heading" class="impact__heading">Təsir</h2>
-  <p class="impact__statement">
-    Azərbaycanda təxminən 13 000 (on üç min) nəfər eşitmə məhdudiyyətli
-    şəxs var. Onların ünsiyyət qurması ya tərcüməçilərdən, ya da ailə
-    üzvlərindən asılıdır. Chevir bunu dəyişdirir və ana dili işarə dili
-    olanları cəmiyyətə geri qazandırmağı hədəfləyir.
-  </p>
+<section class="impact" id="impact" aria-label="Təsir">
+  <div class="line-carousel">
+    <p class="line-carousel__line">
+      Azərbaycanda eşitmə məhdudiyyətli şəxslərin ünsiyyət qurması ya
+      tərcüməçilərdən, ya da ailə üzvlərindən asılıdır.
+    </p>
+    <p class="line-carousel__line">
+      Chevir bunu dəyişdirir və ana dili işarə dili olanları cəmiyyətə
+      geri qazandırmağı hədəfləyir.
+    </p>
+  </div>
 </section>
 
 <section class="roadmap reveal" aria-labelledby="roadmap-heading">
@@ -528,4 +532,7 @@ export function initContent() {
   setupResultsVideos()
   setupSectionBackgrounds()
   setupFullBleedBackgrounds()
+  // Təsir bölməsi müvəqqəti gizlədilib (bax statement.css: .impact{display:none}).
+  // Geri qaytarmaq üçün aşağıdakı sətri aç.
+  // initLineCarousel('.impact')
 }

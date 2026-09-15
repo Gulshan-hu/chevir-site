@@ -55,14 +55,6 @@
   padding: clamp(2rem, 4.5vw, 3.25rem) clamp(1.25rem, 5vw, 4rem);
 }
 
-/* Təsir: tək bütöv ifadə bölməsi, dar sütun (digər sakit bölmələrlə eyni
-   ritmdə - köhnə üç-sütunlu rəqəm qrid-i məzmun dəyişikliyi ilə silindi). */
-.impact {
-  max-width: 48rem;
-  margin: 0 auto;
-  padding: clamp(3rem, 7vw, 5.5rem) clamp(1.25rem, 5vw, 4rem);
-}
-
 .problem__heading,
 .difference__heading,
 .usecases__heading,
@@ -70,14 +62,6 @@
 .roadmap__heading,
 .team__heading {
   font-size: var(--fs-h2);
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  max-width: 34rem;
-  scroll-margin-top: var(--navbar-h);
-}
-
-.impact__heading {
-  font-size: clamp(2.4rem, 1.7rem + 2.8vw, 3.75rem);
   font-weight: 600;
   letter-spacing: -0.01em;
   max-width: 34rem;
@@ -494,14 +478,8 @@
 }
 
 /* ---------- 6. Təsir ---------- */
-
-.impact__statement {
-  margin-top: 1.75rem;
-  color: var(--ink);
-  font-size: var(--fs-h3);
-  font-weight: 500;
-  line-height: 1.5;
-}
+/* Görünüş paylaşılan .statement/.impact + .line-carousel stilindən gəlir
+   (bax statement.css). */
 
 /* ---------- 7. Mərhələlər ---------- */
 
