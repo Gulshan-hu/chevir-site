@@ -3,7 +3,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { BREAKPOINTS } from '../lib/gsapSetup.js'
 
 // public/ altındakı asset-lərə mütləq "/..." yolla deyil, BASE_URL ilə
-// istinad olunur — sayt alt qovluqda (GitHub Pages: /chevir-site/) yayımlanır.
+// istinad olunur (kök yolda "/" verir, amma alt qovluqda yayımlansa da işləyər).
 const BASE_URL = import.meta.env.BASE_URL
 
 export const pipelineMarkup = `
@@ -11,8 +11,8 @@ export const pipelineMarkup = `
   <div class="pipeline__intro">
     <h2 id="pipeline-heading" class="pipeline__heading">Necə işləyir</h2>
     <p class="pipeline__lead">
-      Bir işarədən cavaba qədər dörd addım — kamera görüntüsündən başlayır,
-      tanınma və tərcümədən keçir, cavabla bitir.
+      İşarə dilində danışanlarla ünsiyyət hər iki istiqamətdə asanlaşır —
+      işarələr mətnə, mətn isə işarə dilinə tərcümə olunur.
     </p>
   </div>
   <div class="pipeline__grid">
@@ -28,8 +28,8 @@ export const pipelineMarkup = `
           Görüntü və izləmə
         </h3>
         <p class="pipeline__step-desc">
-          Kamera əl, barmaq və mimika hərəkətlərini real vaxtda izləyir və AJD
-          işarələrinin ardıcıllığını qeyd edir.
+          Kamera əl, barmaq və mimika hərəkətlərini real vaxtda izləyir və
+          AZİD (Azərbaycan İşarə Dili) işarələrinin ardıcıllığını qeyd edir.
         </p>
         <div class="pipeline__step-media">
           <video
@@ -93,7 +93,7 @@ export const pipelineMarkup = `
           Cavab jest dilində
         </h3>
         <p class="pipeline__step-desc">
-          Eşidən tərəfin cavabı AJD-yə çevrilib jest dilində göstəriləcək. Bu
+          Eşidən tərəfin cavabı AZİD-ə çevrilib jest dilində göstəriləcək. Bu
           funksiya hazırlanır.
         </p>
         <div class="pipeline__step-media">

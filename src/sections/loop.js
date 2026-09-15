@@ -100,7 +100,7 @@ export const loopMarkup = `
     </svg>
 
     <div class="loop__side loop__side--spoken" data-frame>
-      <h3 class="loop__side-title">Xidmət işçisi</h3>
+      <h3 class="loop__side-title">Sosial xidmət agenti</h3>
       <p class="loop__side-desc">Danışıq dilində eşidir və cavab verir.</p>
     </div>
   </div>

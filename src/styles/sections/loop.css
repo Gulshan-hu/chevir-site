@@ -50,8 +50,8 @@
     min-height: 42vh;
   }
 
-  /* "Eşitmə məhdudiyyətli şəxs" 3 sətrə bölünür, "Xidmət işçisi" 1 sətrə —
-     bərabər hündürlük olmasa iki qutu arasında nəzərəçarpan fərq yaranır. */
+  /* "Eşitmə məhdudiyyətli şəxs" 3 sətrə, "Sosial xidmət agenti" 2 sətrə
+     bölünür — min-height hər iki qutunu bərabər hündürlükdə saxlayır. */
   .loop__side {
     min-height: 258px;
     display: flex;

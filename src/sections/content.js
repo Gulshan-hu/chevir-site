@@ -3,7 +3,7 @@ import { prefersReducedMotion } from '../lib/gsapSetup.js'
 import { HAND_POSE_OPEN, HAND_CONNECTIONS } from '../lib/handPoses.js'
 
 // public/ altındakı asset-lərə mütləq "/..." yolla deyil, BASE_URL ilə
-// istinad olunur — sayt alt qovluqda (GitHub Pages: /chevir-site/) yayımlanır.
+// istinad olunur (kök yolda "/" verir, amma alt qovluqda yayımlansa da işləyər).
 const BASE_URL = import.meta.env.BASE_URL
 
 // logo.svg-nin TAM forması (iki qövs, iki ox ucu, mərkəzi nöqtə) — fon
@@ -253,27 +253,12 @@ export const contentMarkup = `
 
 <section class="impact reveal" aria-labelledby="impact-heading">
   <h2 id="impact-heading" class="impact__heading">Təsir</h2>
-  <div class="impact__grid">
-    <div class="impact__item">
-      <p class="impact__number">13&nbsp;000</p>
-      <p class="impact__unit" aria-hidden="true"></p>
-      <p class="impact__desc">Azərbaycanda eşitmə məhdudiyyətli insan.</p>
-    </div>
-    <div class="impact__item">
-      <p class="impact__number">430</p>
-      <p class="impact__unit">milyon</p>
-      <p class="impact__desc">Dünyada eşitmə itkisi yaşayan insan.</p>
-      <p class="impact__source">Mənbə: Ümumdünya Səhiyyə Təşkilatı.</p>
-    </div>
-    <div class="impact__item">
-      <p class="impact__number">1</p>
-      <p class="impact__unit">trilyon dollar</p>
-      <p class="impact__desc">
-        Həll olunmamış eşitmə itkisinin illik qlobal xərci.
-      </p>
-      <p class="impact__source">Mənbə: Ümumdünya Səhiyyə Təşkilatı.</p>
-    </div>
-  </div>
+  <p class="impact__statement">
+    Azərbaycanda təxminən 13 000 (on üç min) nəfər eşitmə məhdudiyyətli
+    şəxs var. Onların ünsiyyət qurması ya tərcüməçilərdən, ya da ailə
+    üzvlərindən asılıdır. Chevir bunu dəyişdirir və ana dili işarə dili
+    olanları cəmiyyətə geri qazandırmağı hədəfləyir.
+  </p>
 </section>
 
 <section class="roadmap reveal" aria-labelledby="roadmap-heading">
@@ -387,8 +372,7 @@ export const contentMarkup = `
       <li>Pilot tərəfdaşlar — dövlət qurumu, bank və ya xəstəxana.</li>
       <li>Eşitmə məhdudiyyətli icma ilə davamlı əməkdaşlıq.</li>
     </ul>
-    <a class="contact__cta" href="mailto:hello@chevirapp.com">hello@chevirapp.com</a>
-    <p class="contact__note">(müvəqqəti ünvandır)</p>
+    <a class="contact__cta" href="mailto:devteam@chevirapp.com">devteam@chevirapp.com</a>
     <div class="contact__meta">
       <p class="contact__meta-copyright">© 2026 Chevir · chevirapp.com</p>
       <p class="contact__meta-slogan">Biz olmadan bizim haqqımızda heç nə.</p>
