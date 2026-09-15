@@ -182,3 +182,32 @@ Sessiya limiti var, kredit vaxtından əvvəl bitməməlidir.
 - Bir fayl həddindən artıq böyüyürsə (təxminən 300 sətirdən çox),
   bölünməsini təklif et, amma icazəsiz bölmə.
 - Təkrarlanan dəyərləri (breakpoint, rəng, müddət) sabitə çıxar.
+
+### Model və kredit səmərəliliyi
+- Bu layihə Claude Sonnet ilə işlənir. Sonnet üçün effektiv işləmə tərzi:
+  aydın, konkret tapşırıqlar qəbul et; qeyri-müəyyənlik olanda təxmin
+  etmə, soruş.
+- Fayl oxuma minimal olsun. Tapşırıqda hansı fayllar göstərilibsə,
+  yalnız onları aç. Əlaqəli fayl lazım olduğunu düşünürsənsə, əvvəlcə
+  bunu tapşırığı verənə de və icazə istə, özbaşına açma.
+- Hər tapşırıqdan əvvəl qısa plan ver (bu, artıq əsas qaydadır).
+  Planı yalnız zəruri qədər ətraflı yaz — hər sətri əsaslandırmaq
+  lazım deyil, əsas qərarları izah et.
+- Yoxlama mərhələsini tapşırığın həcminə uyğunlaşdır: kiçik düzəliş
+  üçün bir-iki ölçüdə yoxlama kifayətdir, böyük struktur dəyişikliyi
+  tam yoxlama tələb edir. Hər tapşırıqda avtomatik tam QA (bütün ölçülər,
+  bütün rejimlər) etmə — yalnız açıq tələb olunanda.
+- Xülasələr qısa olsun: nə dəyişdi, nə tapıldı (əgər bug varsa), nəyə
+  diqqət lazımdır. Uğurla işləyən hər detalı sadalama.
+
+### Nə vaxt soruşmaq, nə vaxt qərar vermək
+- Aydın texniki seçim (dəyişən adı, fayl strukturu, hansı GSAP metodu)
+  — özün qərar ver, soruşma.
+- Dizayn və məzmun qərarı (rəng, mətn, layout istiqaməti) — tapşırıqda
+  aydın deyilsə, soruş.
+- Tapşırığın icazə verdiyi fayl siyahısından kənara çıxmaq lazım gələndə
+  — mütləq soruş, özbaşına genişləndirmə.
+- Silinməsi planlaşdırılan kodun başqa yerdə işlədilib-işlədilmədiyi
+  aydın deyilsə — soruş, təxmin etmə.
+- Uzun sürən və ya çətin alınan iş (bir saatdan çox, dəfələrlə uğursuz
+  cəhd) — dayan və vəziyyəti bildir, sadələşdirilmiş alternativ təklif et.
