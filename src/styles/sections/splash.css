@@ -3,7 +3,7 @@
 #splash {
   /* Hero kimi splash da həmişə açıq fonda qalır, sistemin tünd rejimindən asılı olmadan.
      --ink də lazımdır: #splash indi birbaşa body-nin övladıdır (.hero-nun daxilində
-     deyil), ona görə hero-nun lokal --ink təyinatını miras almır — klonlanan loqonun
+     deyil), ona görə hero-nun lokal --ink təyinatını miras almır - klonlanan loqonun
      "currentColor" nöqtəsi bunsuz sistem tünd rejimində səhv rəngə düşərdi. */
   --paper: #f1f0ee;
   --muted: #6e6965;
@@ -21,7 +21,7 @@
 }
 
 .splash__logo {
-  /* Dekorativdir — klik/toxunma tutmamalıdır. */
+  /* Dekorativdir - klik/toxunma tutmamalıdır. */
   pointer-events: none;
 }
 

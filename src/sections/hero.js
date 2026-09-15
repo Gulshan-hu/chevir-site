@@ -2,7 +2,7 @@ import gsap from 'gsap'
 import { prefersReducedMotion } from '../lib/gsapSetup.js'
 import { HERO_TAGLINE } from '../lib/i18n.js'
 
-// public/wordmark.svg-nin dəyişməz kopyası (currentColor — hero-da ağ olur).
+// public/wordmark.svg-nin dəyişməz kopyası (currentColor - hero-da ağ olur).
 const WORDMARK_MARKUP = `
   <path d="M72.418 13.7919C72.418 8.92787 75.49 6.46387 80.354 6.46387V9.98387C77.794 9.98387 76.258 11.2319 76.258 13.7919V22.7519H72.418V13.7919Z" fill="currentColor"/>
   <path d="M66.6309 2.112C66.6309 0.959999 67.5589 0 68.7429 0C69.9269 0 70.8549 0.959999 70.8549 2.112C70.8549 3.328 69.9269 4.256 68.7429 4.256C67.5589 4.256 66.6309 3.328 66.6309 2.112ZM66.8229 22.752V6.752H70.6629V22.752H66.8229Z" fill="currentColor"/>
@@ -12,7 +12,7 @@ const WORDMARK_MARKUP = `
   <path d="M3.84 14.7838C3.84 17.7598 5.6 19.5198 8.256 19.5198C10.208 19.5198 11.648 18.5918 12.32 16.9598H16.32C15.456 20.6718 12.48 23.0398 8.288 23.0398C3.328 23.0398 0 19.7118 0 14.7518C0 9.82383 3.328 6.52783 8.288 6.52783C12.448 6.52783 15.456 8.86383 16.288 12.5118H12.288C11.616 10.9438 10.176 10.0478 8.256 10.0478C5.6 10.0478 3.84 11.8078 3.84 14.7838Z" fill="currentColor"/>
 `
 
-// public/logo.svg-nin dəyişməz kopyası — 3D əl yüklənməyəndə (reduced-motion/
+// public/logo.svg-nin dəyişməz kopyası - 3D əl yüklənməyəndə (reduced-motion/
 // WebGL yoxdursa) statik fallback kimi qalır.
 // fill="none" hər qövsdə birbaşa yazılıb: bu svg üçün ayrıca <svg> elementinin
 // özündə fill="none" yoxdur, ona görə miras gözləmək əvəzinə açıq təyin olunur.
@@ -24,7 +24,7 @@ const BRAND_LOGO_MARKUP = `
   <circle id="dot" cx="50" cy="50" r="4" fill="currentColor"/>
 `
 
-// Naviqasiya paneli üçün loqonun sadə, animasiyasız kopyası — id toqquşmasının
+// Naviqasiya paneli üçün loqonun sadə, animasiyasız kopyası - id toqquşmasının
 // qarşısını almaq üçün id-siz.
 const NAVBAR_LOGO_MARKUP = BRAND_LOGO_MARKUP.replace(/\sid="[^"]*"/g, '')
 
@@ -70,14 +70,14 @@ function isWebGLAvailable() {
 }
 
 // Statik #brand-logo yalnız FALLBACK kimi görünür (WebGL yoxdursa, reduced-motion,
-// ya da 3D yüklənmə uğursuz olsa) — default gizlidir (hero.css), ona görə uğurlu
+// ya da 3D yüklənmə uğursuz olsa) - default gizlidir (hero.css), ona görə uğurlu
 // 3D yüklənmədə heç vaxt görünüb-yoxa çıxmır (əvvəlki "yanıb-sönmə" bugı).
 function setFallbackVisible(visible) {
   document.querySelector('.hero__logo-slot')?.classList.toggle('is-fallback', visible)
 }
 
 // Fon (noise dalğa) + 3D əl nöqtə buludu eyni canvas-da (hand3d.js, tək
-// renderer/scene) — yalnız hərəkət azaldılmayıb və WebGL dəstəklənirsə
+// renderer/scene) - yalnız hərəkət azaldılmayıb və WebGL dəstəklənirsə
 // yüklənir (dinamik import, three.js ilk yükləməni ağırlaşdırmır).
 // Əks halda statik logo.svg + CSS fon görünməkdə davam edir.
 function initHandVisual() {
@@ -101,13 +101,13 @@ function initHandVisual() {
         canvas.classList.add('is-active')
       })
       .catch(() => {
-        // 3D yüklənə bilmədi — statik logo.svg fallback kimi göstərilir.
+        // 3D yüklənə bilmədi - statik logo.svg fallback kimi göstərilir.
         setFallbackVisible(true)
       })
   }
 
   // Splash (preloader) bitənə qədər gözləyir ki, loqonun splash-dan hero-ya
-  // uçuş animasiyası (preloader.js) pozulmasın — sonra yerini 3D-yə verir.
+  // uçuş animasiyası (preloader.js) pozulmasın - sonra yerini 3D-yə verir.
   if (document.documentElement.classList.contains('preloading')) {
     const observer = new MutationObserver(() => {
       if (!document.documentElement.classList.contains('preloading')) {
@@ -128,7 +128,7 @@ export function setupHero() {
   const tagline = document.querySelector('.hero__tagline')
   const cta = document.querySelector('.navbar__cta')
 
-  // tagline/cta burda yalnız gizlədilir (instant set) — görünən reveal
+  // tagline/cta burda yalnız gizlədilir (instant set) - görünən reveal
   // tween-i preloader.js-in öz splash timeline-ındadır (`.hero__desc` seçicisi
   // ilə tapır, t=2.9-da açır). Wordmark və əl splash örtüyünün altında adi
   // görünür qalır, əvvəlki başlıq/demo kimi.
@@ -147,7 +147,7 @@ export function initNavbar() {
   if (!navbarEl) return
 
   // Bütün bölmələr tünddür (bax CLAUDE.md), ona görə naviqasiya həmişə
-  // tünd rejimdədir — açıq/tünd keçid məntiqi lazım deyil. Yalnız scroll
+  // tünd rejimdədir - açıq/tünd keçid məntiqi lazım deyil. Yalnız scroll
   // edildikdə tünd yarımşəffaf blur qatı görünür.
   const toggleScrolledBg = () => navbarEl.classList.toggle('is-scrolled', window.scrollY > 40)
   window.addEventListener('scroll', toggleScrolledBg, { passive: true })

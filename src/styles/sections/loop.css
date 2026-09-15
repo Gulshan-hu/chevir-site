@@ -51,7 +51,7 @@
   }
 
   /* "Eşitmə məhdudiyyətli şəxs" 3 sətrə, "Sosial xidmət agenti" 2 sətrə
-     bölünür — min-height hər iki qutunu bərabər hündürlükdə saxlayır. */
+     bölünür - min-height hər iki qutunu bərabər hündürlükdə saxlayır. */
   .loop__side {
     min-height: 258px;
     display: flex;
@@ -140,18 +140,18 @@
   filter: drop-shadow(0 0 6px rgba(241, 237, 233, 0.75));
 }
 
-/* NAZIK XƏTT PARILTISI — dəqiq ölçülmüş səbəb (üçüncü cəhd):
-   filter:drop-shadow SƏHV DEYİL — computed style-da düzgün tətbiq olunur,
+/* NAZIK XƏTT PARILTISI - dəqiq ölçülmüş səbəb (üçüncü cəhd):
+   filter:drop-shadow SƏHV DEYİL - computed style-da düzgün tətbiq olunur,
    heç bir valideyn filter/opacity/mask onu üstələmir (yoxlanılıb), CSS filter
    SVG stroke-a tətbiq OLUNUR (native <filter>+feDropShadow ilə də eyni
    nəticə). Playwright-la 400% böyüdülüb piksel-piksel müqayisə edəndə
    parıltı FAKTİKİ VARDI, amma 1.5px stroke-da 3px/alfa-0.4 elə zəif nəticə
    verir ki, normal miqyasda (və qalın xəttin güclü parıltısının yanında)
-   praktiki olaraq görünmür — bulanıqlaşdırılan "kütlə" (stroke sahəsi) neçə
+   praktiki olaraq görünmür - bulanıqlaşdırılan "kütlə" (stroke sahəsi) neçə
    dəfə az olduğu üçün eyni parametrlər qalın xəttdəki kimi işləmir. Dəyərləri
    nə qədər artırsam da (hətta 12px/alfa-1) tək filter effektini normal
    miqyasda inandırıcı dərəcədə görünən etmədi.
-   Həll: filter yox, MANUAL halo — pathB-nin arxasında eyni "d" ilə iki əlavə
+   Həll: filter yox, MANUAL halo - pathB-nin arxasında eyni "d" ilə iki əlavə
    xətt (bax loop.js .loop__path-halo--outer/--mid, dashoffset-i JS-də pathB
    ilə sinxronlaşdırılır) daha enli və sönük tonla "işıq yayılması" effekti
    yaradır. Bu, filter-dən asılı olmadığı üçün miqyasdan asılı olmayaraq

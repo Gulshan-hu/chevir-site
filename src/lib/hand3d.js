@@ -14,7 +14,7 @@ const JOINT_RADIUS = 0.045
 
 // 21 nöqtənin (bütün aktiv pozalar üzrə) sərhəd qutusunun mərkəzini və bu
 // mərkəzdən ən uzaq nöqtəyə olan məsafəni hesablayır. Kamera bu radiusa görə
-// uyğunlaşır (bax: fitDistanceForRadius) — sabit kamera məsafəsi əvəzinə.
+// uyğunlaşır (bax: fitDistanceForRadius) - sabit kamera məsafəsi əvəzinə.
 function computeHandFraming(poses) {
   const min = [Infinity, Infinity, Infinity]
   const max = [-Infinity, -Infinity, -Infinity]
@@ -43,11 +43,11 @@ const HAND_FRAME = computeHandFraming(HAND_POSES)
 const isDesktop = window.matchMedia(BREAKPOINTS.isDesktop).matches
 const isCoarsePointer = window.matchMedia('(pointer: coarse)').matches
 // Toxunma cihazlarında (coarse pointer və ya <980px) barmaqla scroll əl
-// çevirməyə getməsin deyə orbit idarəsi tamamilə sönür — əl yalnız avtomatik
+// çevirməyə getməsin deyə orbit idarəsi tamamilə sönür - əl yalnız avtomatik
 // fırlanır. Masaüstündə kursor idarəsi olduğu kimi qalır.
 const enablePointerOrbit = isDesktop && !isCoarsePointer
 
-// Radiuslu sferanı (bütün pozalar + istənilən fırlanma bucağı — sfera
+// Radiuslu sferanı (bütün pozalar + istənilən fırlanma bucağı - sfera
 // fırlanmaya görə dəyişməz olduğu üçün) kadra tam sığdıran kamera məsafəsi.
 // Sfera-uyğunlaşma düsturu riyazi cəhətdən kəsilməyə qarşı təminatlıdır
 // (istənilən MARGIN_FILL<1 üçün). Canvas indi tam ekranı örtdüyündən
@@ -63,7 +63,7 @@ function fitDistanceForRadius(camera, radius) {
 }
 
 // Fon müstəvisi həmişə bu sabit dünya-z-də qalır (kameranın məsafəsindən
-// asılı olmayaraq) — yalnız ölçüsü hər relayout-da kameranın yeni məsafəsinə
+// asılı olmayaraq) - yalnız ölçüsü hər relayout-da kameranın yeni məsafəsinə
 // görə frustumu tam doldurmaq üçün yenidən hesablanır.
 const BG_PLANE_Z = -4
 
@@ -75,24 +75,24 @@ const WAVE_VERTEX = /* glsl */ `
   }
 `
 
-// Səhifənin tünd fon rəngi (#16130F — base.css-dəki --paper tündrejim dəyəri,
+// Səhifənin tünd fon rəngi (#16130F - base.css-dəki --paper tündrejim dəyəri,
 // loop.css-də də eyni sabit işlədilir). Hero həmişə tünd qaldığı üçün (bax:
-// hero.css) bu, dəyişən deyil, birbaşa yazılıb — hero ilə pipeline (dark mode-da)
+// hero.css) bu, dəyişən deyil, birbaşa yazılıb - hero ilə pipeline (dark mode-da)
 // arasında rəng tikişi qalmasın deyə.
 //
-// TAM SABİT: heç bir uniform vaxtdan asılı deyil (uTime yoxdur) — premium hiss
+// TAM SABİT: heç bir uniform vaxtdan asılı deyil (uTime yoxdur) - premium hiss
 // hərəkətdən yox, iki aydın işıq ləkəsindən və grain-dən gəlir.
 const WAVE_FRAGMENT = /* glsl */ `
-  uniform float uAspect; // canvas eni/hündürlüyü — UV məsafəsini ekran-mütənasib etmək üçün
+  uniform float uAspect; // canvas eni/hündürlüyü - UV məsafəsini ekran-mütənasib etmək üçün
   varying vec2 vUv;
 
   // Presizyona davamlı hash (Dave Hoskins, "Hash without Sine"). Köhnə versiya
   // full-resolution gl_FragCoord kimi böyük dəyərləri BİRBAŞA böyük əmsalla
-  // (123.34/456.21) vurub fract() edirdi — float32-də bu böyüklükdə fract()
+  // (123.34/456.21) vurub fract() edirdi - float32-də bu böyüklükdə fract()
   // presizyon itirir və nəticə real təsadüfi yox, GPU-ya görə dəyişən "blok"
   // naxışı kimi görünürdü (əvvəlki "iri, boz, bərabər grain" şikayətinin əsl
   // səbəbi). Burda əvvəlcə kiçik əmsalla (0.13) miqyaslanır, aralıq dəyərlər
-  // kiçik qalır, presizyon itmir — hər piksel fərdi təsadüfi qalır.
+  // kiçik qalır, presizyon itmir - hər piksel fərdi təsadüfi qalır.
   float hash(vec2 p) {
     vec3 p3 = fract(vec3(p.xyx) * 0.13);
     p3 += dot(p3, p3.yzx + 3.333);
@@ -121,7 +121,7 @@ const WAVE_FRAGMENT = /* glsl */ `
     return sum;
   }
 
-  // Fırlanmış (anizotrop) yumşaq ellips — diaqonal uzanan ləkə forması üçün.
+  // Fırlanmış (anizotrop) yumşaq ellips - diaqonal uzanan ləkə forması üçün.
   float blob(vec2 p, vec2 center, float angle, vec2 sigma) {
     vec2 d = p - center;
     float ca = cos(angle);
@@ -134,7 +134,7 @@ const WAVE_FRAGMENT = /* glsl */ `
     vec2 uv = vUv;
     vec2 p = vec2(uv.x * uAspect, uv.y);
 
-    // Sol-yuxarı: diaqonal (45°) uzanan işıq ləkəsi — küncdə, kiçik nüvə.
+    // Sol-yuxarı: diaqonal (45°) uzanan işıq ləkəsi - küncdə, kiçik nüvə.
     vec2 c1 = vec2(0.05 * uAspect, 0.94);
     float b1 = blob(p, c1, 0.7853981634, vec2(0.32, 0.12));
 
@@ -142,18 +142,18 @@ const WAVE_FRAGMENT = /* glsl */ `
     vec2 c2 = vec2(0.92 * uAspect, 0.08);
     float b2 = blob(p, c2, -0.5, vec2(0.26, 0.13)) * 0.65;
 
-    // Statik üzvi təhrif — hərəkət yoxdur, forma riyazi ellips kimi süni
+    // Statik üzvi təhrif - hərəkət yoxdur, forma riyazi ellips kimi süni
     // görünməsin deyə (bax: fbm, vaxtdan asılı deyil).
     float organic = fbm(p * 1.6 + 11.0);
     float light = (b1 + b2) * mix(0.85, 1.05, organic);
 
-    // Kontrastı artır — "bərabər boz duman" yerinə aydın işıq/qaranlıq fərqi.
+    // Kontrastı artır - "bərabər boz duman" yerinə aydın işıq/qaranlıq fərqi.
     // Aşağı/yuxarı hədlər yüksək saxlanılıb ki, ləkə yalnız öz nüvəsində tam
     // parlaq olsun (kiçik, "aydın" nüvə), böyük bir hissə ekranı "yuyub
-    // aparmasın" — keçid özü hələ də yumşaqdır (smoothstep).
+    // aparmasın" - keçid özü hələ də yumşaqdır (smoothstep).
     light = smoothstep(0.15, 0.80, light);
 
-    // Əlin sahəsini (kanvasın mərkəzi — kamera həmişə dünya mərkəzinə baxır)
+    // Əlin sahəsini (kanvasın mərkəzi - kamera həmişə dünya mərkəzinə baxır)
     // nisbətən qaranlıq saxla ki, ağ əl fərqlənsin.
     vec2 centered = vec2((uv.x - 0.5) * uAspect, uv.y - 0.5);
     float handMask = smoothstep(0.08, 0.30, length(centered));
@@ -162,7 +162,7 @@ const WAVE_FRAGMENT = /* glsl */ `
     vec3 base = vec3(0.0863, 0.0745, 0.0588); // #16130F
     vec3 color = base + vec3(light) * 0.55;
 
-    // Grain — işığın gücünə bağlı (qaranlıqda demək olar yox, işıqda aydın),
+    // Grain - işığın gücünə bağlı (qaranlıqda demək olar yox, işıqda aydın),
     // sabit (uTime yoxdur, kadr-kadr eyni), fərdi piksel təsadüfiliyi.
     float grainAmt = mix(0.012, 0.16, light);
     float grain = (hash(gl_FragCoord.xy) - 0.5) * grainAmt;
@@ -172,7 +172,7 @@ const WAVE_FRAGMENT = /* glsl */ `
   }
 `
 
-// Nöqtə halosu üçün yumşaq radial sprite — bir dəfə çəkilir, bütün joint
+// Nöqtə halosu üçün yumşaq radial sprite - bir dəfə çəkilir, bütün joint
 // glow-ları paylaşır.
 let glowTextureCache = null
 function getGlowTexture() {
@@ -192,10 +192,10 @@ function getGlowTexture() {
 }
 
 // canvas ekrandan çıxanda (IntersectionObserver) və ya ölçüsü dəyişəndə
-// (ResizeObserver) render dayanır/uyğunlaşır — performans üçün.
+// (ResizeObserver) render dayanır/uyğunlaşır - performans üçün.
 //
 // TƏK SƏHNƏ: fon (noise dalğa + grain shader-li müstəvi) və 3D əl eyni
-// renderer/scene-də birləşdirilib — ikinci WebGL konteksti yaradılmır.
+// renderer/scene-də birləşdirilib - ikinci WebGL konteksti yaradılmır.
 // Qaraltma və radial maska (yalnız əlin sahəsi) birbaşa şu shader-in içindədir,
 // ona görə əl heç vaxt qaralmır (ayrı material, shader-dən təsirlənmir).
 // Müstəvi 980px-dən aşağı ekranlarda ümumiyyətlə yaradılmır (statik CSS
@@ -211,7 +211,7 @@ export function initHand3D(canvas) {
   const scene = new THREE.Scene()
   const camera = new THREE.PerspectiveCamera(35, 1, 0.05, 100)
 
-  // pivot/model ayrımı — fırlanma əlin sərhəd qutusunun mərkəzi ətrafında
+  // pivot/model ayrımı - fırlanma əlin sərhəd qutusunun mərkəzi ətrafında
   // olsun deyə (HAND_FRAME.center), koordinatların özü toxunulmaz qalır.
   const pivot = new THREE.Group()
   const model = new THREE.Group()
@@ -239,7 +239,7 @@ export function initHand3D(canvas) {
   const current = new Float32Array(jointCount * 3)
   const dummy = new THREE.Object3D()
 
-  // Ağ halo — additiv "glow" nöqtələri, əsl joint-lərin arxasında/üstündə,
+  // Ağ halo - additiv "glow" nöqtələri, əsl joint-lərin arxasında/üstündə,
   // eyni koordinatları paylaşır (current). CSS drop-shadow burda işləmir
   // (fon müstəvisi bütün canvas-ı opaq edir), ona görə parıltı birbaşa
   // WebGL-də, yüngül (bir əlavə Points obyekti, post-process yoxdur).
@@ -359,7 +359,7 @@ export function initHand3D(canvas) {
     canvas.addEventListener('pointerup', onPointerUp)
     canvas.addEventListener('pointercancel', onPointerUp)
   } else {
-    // Canvas toxunma/scroll hadisələrini tutmasın — barmaq sürüşdürməsi
+    // Canvas toxunma/scroll hadisələrini tutmasın - barmaq sürüşdürməsi
     // altındakı səhifəyə keçsin.
     canvas.style.pointerEvents = 'none'
   }

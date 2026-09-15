@@ -14,7 +14,7 @@
 @media (min-width: 980px) {
   /* Media panel "center center"-də pin olunur (bax pipeline.js). Bura qədər
      intro ilə grid arasındakı məsafə qəsdən dar saxlanılır ki, pin başlayanda
-     başlıq hələ ekranda qalsın — geniş boşluq pin nöqtəsini aşağı itələyib
+     başlıq hələ ekranda qalsın - geniş boşluq pin nöqtəsini aşağı itələyib
      başlığı daha da yuxarı atardı. */
   .pipeline__intro {
     margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
@@ -94,7 +94,7 @@
   background: #16130f;
 }
 
-/* Dürüst "hazırlanır" bildirişi — tünd panel fonu ilə birləşir (yuxarıdakı
+/* Dürüst "hazırlanır" bildirişi - tünd panel fonu ilə birləşir (yuxarıdakı
    video letterbox-u ilə eyni rəng), mesaj özü isə kiçik, aydın kənarlı
    pill-də mərkəzləşir ki, "yüklənməyən şəkil" kimi deyil, qəsdən dizayn
    edilmiş vəziyyət bildirişi kimi oxunsun. */
@@ -153,7 +153,7 @@
 }
 
 /* Kanal rəngi (magenta/mavi) ağ fonda kiçik mətn üçün AA kontrastını keçmir
-   (CLAUDE.md) — aktiv vəziyyət rəng əvəzinə tam kontrastlı ink + ölçü ilə
+   (CLAUDE.md) - aktiv vəziyyət rəng əvəzinə tam kontrastlı ink + ölçü ilə
    fərqləndirilir. */
 .pipeline__step.is-active .pipeline__number {
   color: var(--ink);

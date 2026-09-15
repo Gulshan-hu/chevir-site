@@ -138,7 +138,7 @@ export function initLoop() {
     const pathA = svg.querySelector('.loop__path--signed')
     const pathB = svg.querySelector('.loop__path--spoken')
     // Nazik xəttin "parıltısı" CSS filter:drop-shadow ilə işləmir (ölçülüb,
-    // bax loop.css-dəki şərh) — əvəzinə pathB-nin arxasında, eyni "d" ilə,
+    // bax loop.css-dəki şərh) - əvəzinə pathB-nin arxasında, eyni "d" ilə,
     // daha enli/sönük iki əlavə xətt (halo) çəkilir. dashoffset-ləri pathB
     // ilə sinxron saxlanmalıdır ki, birlikdə "çəkilsinlər".
     const pathBHaloOuter = svg.querySelector('.loop__path-halo--outer')

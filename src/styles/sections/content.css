@@ -38,7 +38,7 @@
   padding: clamp(3rem, 7vw, 5.5rem) clamp(1.25rem, 5vw, 4rem);
 }
 
-/* Sıx qrid bölmələri — Fərqimiz, Harada işləyir, Komanda: eyni grid
+/* Sıx qrid bölmələri - Fərqimiz, Harada işləyir, Komanda: eyni grid
    strukturunu saxlayır, yalnız boşluq sıxılıb. */
 .difference,
 .usecases,
@@ -50,13 +50,13 @@
   padding: clamp(2.75rem, 6vw, 4.5rem) clamp(1.25rem, 5vw, 4rem);
 }
 
-/* Sakit bölmə — Arxamızda nə dayanır: az padding, dar sütun. */
+/* Sakit bölmə - Arxamızda nə dayanır: az padding, dar sütun. */
 .trust {
   padding: clamp(2rem, 4.5vw, 3.25rem) clamp(1.25rem, 5vw, 4rem);
 }
 
 /* Təsir: tək bütöv ifadə bölməsi, dar sütun (digər sakit bölmələrlə eyni
-   ritmdə — köhnə üç-sütunlu rəqəm qrid-i məzmun dəyişikliyi ilə silindi). */
+   ritmdə - köhnə üç-sütunlu rəqəm qrid-i məzmun dəyişikliyi ilə silindi). */
 .impact {
   max-width: 48rem;
   margin: 0 auto;
@@ -105,17 +105,17 @@
   isolation: isolate;
 }
 
-/* Bu bölmələr özləri max-width:72rem ilə mərkəzləşib (yuxarıda) — .section-bg
+/* Bu bölmələr özləri max-width:72rem ilə mərkəzləşib (yuxarıda) - .section-bg
    "inset:0" ilə bağlansaydı yalnız o dar sütunun kənarına yapışardı, ekranın
    həqiqi kənarına yox. Full-bleed lazımdır. "100vw" İSTİFADƏ OLUNMUR: 100vw
    brauzerin şaquli scroll zolağının enini DAXİL edir (CSS spesifikasiyası),
-   document.documentElement.clientWidth isə YOX — nəticədə klassik (overlay
+   document.documentElement.clientWidth isə YOX - nəticədə klassik (overlay
    olmayan) scroll zolaqlı sistemlərdə (adi Windows Chrome/Edge) .section-bg
    clientWidth-dən bir neçə piksel ENLİ olur və səhifənin üfüqi scroll
    panelinə səbəb olur (Playwright-in headless mühitində scroll zolağı
    overlay olduğu üçün bu fərq özünü göstərmirdi, ona görə əvvəlki yoxlama
    bunu tapmadı). Əvəzinə left/width content.js-də JS ilə ÖLÇÜLMÜŞ piksel
-   dəyərləri kimi tətbiq olunur (setupFullBleedBackgrounds) — clientWidth-ə
+   dəyərləri kimi tətbiq olunur (setupFullBleedBackgrounds) - clientWidth-ə
    əsaslanır, scroll zolağı nə tipdə olursa olsun dəqiqdir. */
 .section-bg {
   position: absolute;
@@ -188,7 +188,7 @@
 
 .section-bg__logo-group {
   /* Fırlanma mərkəzi content.js-də GSAP-ın svgOrigin:'50 50' ilə verilir
-     (bax preloader.js-in eyni texnikası) — transform-box:view-box burda
+     (bax preloader.js-in eyni texnikası) - transform-box:view-box burda
      etibarsız çıxdı: qrup gözlənilməz şəkildə SVG-nin öz overflow:hidden
      sərhədinin çölünə fırlanıb tamamilə görünməz olurdu. */
 }
@@ -470,7 +470,7 @@
 
 .results__video {
   /* max-width/max-height doğma piksel ölçüsünə content.js-də runtime-da
-     kip olunur (loadedmetadata) — çərçivə böyüyə bilər, video bulanmaz. */
+     kip olunur (loadedmetadata) - çərçivə böyüyə bilər, video bulanmaz. */
   width: auto;
   height: auto;
   max-width: 100%;
@@ -572,7 +572,7 @@
   line-height: 1.55;
 }
 
-/* ---------- 7b. Etibar — alçaq üfüqi lent ---------- */
+/* ---------- 7b. Etibar - alçaq üfüqi lent ---------- */
 
 .trust__heading {
   line-height: 1.15;
@@ -626,7 +626,7 @@
 }
 
 /* Mobil: üfüqi ayırıcı (üstdə). ≥900px: şaquli ayırıcı (soldan), kart/qutu
-   görünüşü yoxdur — yalnız nazik xətt. */
+   görünüşü yoxdur - yalnız nazik xətt. */
 .trust__item {
   padding-top: 1.1rem;
   border-top: 1px solid rgba(26, 24, 23, 0.12);
@@ -727,7 +727,7 @@
 }
 
 /* ---------- 9. Əlaqə + footer (hero ilə eyni ailə: gradient işıq ləkələri +
-   grain, 3D əl yoxdur — WebGL açmadan, hero.css-dəki .hero__bg reseptinin
+   grain, 3D əl yoxdur - WebGL açmadan, hero.css-dəki .hero__bg reseptinin
    CSS-only təkrarı). Bir bölmə: CTA + kolofon. ---------- */
 
 .contact {
@@ -764,7 +764,7 @@
 }
 
 /* Hero-nun .hero__wordmark-ı ilə EYNİ ölçü/mövqe parametrləri (bax
-   hero.css) — tam eni tutan, iri, HEÇ vaxt kəsilmir (hero-dakı kimi).
+   hero.css) - tam eni tutan, iri, HEÇ vaxt kəsilmir (hero-dakı kimi).
    Mətnin üstünə düşməməsi indi .contact__content-in aşağı boşluğu ilə
    həll olunur (bax aşağı), fon/pill ilə deyil. */
 .contact__wordmark {
@@ -783,7 +783,7 @@
 }
 
 /* Aşağı boşluq wordmark-ın öz hündürlüyünə (aspect-ratio 81/24 → eni ilə
-   xətti mütənasib) uyğunlaşdırılıb ki, məzmun (xüsusilə son sətir —
+   xətti mütənasib) uyğunlaşdırılıb ki, məzmun (xüsusilə son sətir -
    contact__meta) həmişə wordmark-ın yuxarı kənarından yuxarıda qalsın,
    üst-üstə düşmə olmasın. */
 .contact__content {

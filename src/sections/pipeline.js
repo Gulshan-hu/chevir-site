@@ -11,7 +11,7 @@ export const pipelineMarkup = `
   <div class="pipeline__intro">
     <h2 id="pipeline-heading" class="pipeline__heading">Necə işləyir</h2>
     <p class="pipeline__lead">
-      İşarə dilində danışanlarla ünsiyyət hər iki istiqamətdə asanlaşır —
+      İşarə dilində danışanlarla ünsiyyət hər iki istiqamətdə asanlaşır -
       işarələr mətnə, mətn isə işarə dilinə tərcümə olunur.
     </p>
   </div>
@@ -116,12 +116,12 @@ export function initPipeline() {
   const steps = Array.from(section.querySelectorAll('.pipeline__step'))
   const videos = Array.from(section.querySelectorAll('.pipeline__video'))
   const sharedPlaceholders = Array.from(mediaPanel.querySelectorAll('[data-step-placeholder]'))
-  // "Tərcümə və səs" (03) addımının öz medyası yoxdur — sticky paneldə
+  // "Tərcümə və səs" (03) addımının öz medyası yoxdur - sticky paneldə
   // əvvəlki addımın (02, gradcam) videosu dəyişmədən qalır.
   const NO_MEDIA_STEP_INDEX = 2
 
   // Videolar preload="none" ilə gəlir (lazımsız erkən yüklənmənin qarşısını
-  // almaq üçün) — desktop qolunda ilkin setActiveStep(0) səhifə açılan kimi,
+  // almaq üçün) - desktop qolunda ilkin setActiveStep(0) səhifə açılan kimi,
   // scroll-dan əvvəl çağırıldığı üçün .play()-i bölmə görünənə qədər gecikdirmək
   // lazımdır. mediaReady yalnız aşağıdakı IntersectionObserver kəsişəndə true olur.
   let mediaReady = false
@@ -148,7 +148,7 @@ export function initPipeline() {
   }
 
   // Mənfi alt rootMargin bölmənin dəqiq ekran kənarına toxunduğu (amma hələ
-  // görünmədiyi) anda tetiklənməsinin qarşısını alır — bölmə həqiqətən bir
+  // görünmədiyi) anda tetiklənməsinin qarşısını alır - bölmə həqiqətən bir
   // qədər görünənə qədər gözləyir.
   const lazyMediaObserver = new IntersectionObserver(
     (entries) => {

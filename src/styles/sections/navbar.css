@@ -1,7 +1,7 @@
 /* ---------- Navbar ---------- */
 
 :root {
-  /* Sabit (1.1rem padding, ölçüsü dəyişməyən logo/mətn) — ölçülüb: ~77px,
+  /* Sabit (1.1rem padding, ölçüsü dəyişməyən logo/mətn) - ölçülüb: ~77px,
      bufer üçün bir qədər artıq. scroll-margin-top üçün digər bölmə
      fayllarında istifadə olunur ki, anchor/fokus scroll-u başlıqları
      navbar arxasında qoymasın. */
@@ -9,7 +9,7 @@
 }
 
 .navbar {
-  /* Bütün bölmələr tünddür (bax CLAUDE.md) — naviqasiya həmişə açıq mətnli,
+  /* Bütün bölmələr tünddür (bax CLAUDE.md) - naviqasiya həmişə açıq mətnli,
      heç bir tünd/açıq keçid yoxdur. Yalnız scroll edildikdə tünd-şəffaf
      blur qatı görünür. */
   position: fixed;
@@ -40,7 +40,7 @@
   text-decoration: none;
   color: #f1ede9;
   /* Splash klonu naviqasiya loqosuna enənə qədər naviqasiya görünməz və
-     toxunulmazdır (visibility, hit-testi və tab sırasını da söndürür) —
+     toxunulmazdır (visibility, hit-testi və tab sırasını da söndürür) -
      preloader.js uçuş bitəndə .is-revealed sinfini verir. */
   visibility: hidden;
 }
@@ -74,7 +74,7 @@
   transition-delay: 0.12s;
 }
 
-/* Loqo əvvəl, wordmark bir az sonra — birlikdə yox. */
+/* Loqo əvvəl, wordmark bir az sonra - birlikdə yox. */
 .navbar.is-revealed .navbar__logo-svg,
 .navbar.is-revealed .navbar__name {
   opacity: 1;

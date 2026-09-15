@@ -6,10 +6,10 @@
 //  13-16  adsız barmaq: MCP, PIP, DIP, TIP
 //  17-20  çeçələ barmaq: MCP, PIP, DIP, TIP
 //
-// Koordinatlar təxminidir (real AzSLD məlumatı hələ yoxdur) — məqsəd yalnız
+// Koordinatlar təxminidir (real AzSLD məlumatı hələ yoxdur) - məqsəd yalnız
 // anatomik cəhətdən inandırıcı barmaq uzunluğu/açı nisbətlərini saxlamaqdır,
 // dəqiq ölçü deyil. Real gest məlumatı gələndə bu massivlər eyni formatda
-// (21 x [x, y, z]) əvəz olunmalıdır — qalan kod (hand3d.js) dəyişmədən qalır.
+// (21 x [x, y, z]) əvəz olunmalıdır - qalan kod (hand3d.js) dəyişmədən qalır.
 // Vahid: normallaşdırılmış lokal ölçü, bilək mərkəzdə (0,0,0), ovuc +z-ə baxır.
 
 export const HAND_CONNECTIONS = [
@@ -18,10 +18,10 @@ export const HAND_CONNECTIONS = [
   [5, 9], [9, 10], [10, 11], [11, 12], // orta
   [9, 13], [13, 14], [14, 15], [15, 16], // adsız
   [13, 17], [17, 18], [18, 19], [19, 20], // çeçələ
-  [0, 17], // ovucun bağlanması (bilək — çeçələ kökü)
+  [0, 17], // ovucun bağlanması (bilək - çeçələ kökü)
 ]
 
-// Açıq əl — bütün barmaqlar açıq və yayılıb.
+// Açıq əl - bütün barmaqlar açıq və yayılıb.
 export const HAND_POSE_OPEN = [
   [0, 0, 0],
   [0.25, 0.15, 0.1], [0.42, 0.32, 0.18], [0.55, 0.48, 0.22], [0.65, 0.62, 0.25],
@@ -31,7 +31,7 @@ export const HAND_POSE_OPEN = [
   [-0.33, 0.5, 0], [-0.34, 0.72, -0.02], [-0.36, 0.85, -0.04], [-0.37, 0.95, -0.05],
 ]
 
-// "Salam" pozası — hazırkı AzSL uyğunluğu təsdiqlənməyib, sonra dəyişəcək.
+// "Salam" pozası - hazırkı AzSL uyğunluğu təsdiqlənməyib, sonra dəyişəcək.
 // Açıq əl (HAND_POSE_OPEN) bazasından bilək ətrafında yüngül fırlanmış iki
 // variant yaradılır; hand3d.js-nin mövcud poza-keçid mexanizmi (dəyişdirilməyib)
 // bunlar arasında morflayaraq yellənmə effekti verir.

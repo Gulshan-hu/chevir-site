@@ -6,7 +6,7 @@ import { HAND_POSE_OPEN, HAND_CONNECTIONS } from '../lib/handPoses.js'
 // istinad olunur (kök yolda "/" verir, amma alt qovluqda yayımlansa da işləyər).
 const BASE_URL = import.meta.env.BASE_URL
 
-// logo.svg-nin TAM forması (iki qövs, iki ox ucu, mərkəzi nöqtə) — fon
+// logo.svg-nin TAM forması (iki qövs, iki ox ucu, mərkəzi nöqtə) - fon
 // dekoru kimi təkrar istifadə, boz və fırlanan.
 const ARC_SIGNED_D =
   'M50.5 88.5C45.3784 88.5 40.307 87.4912 35.5753 85.5313C30.8436 83.5714 26.5443 80.6986 22.9228 77.0772C19.3013 73.4557 16.4286 69.1563 14.4687 64.4247C12.5088 59.693 11.5 54.6215 11.5 49.5'
@@ -16,7 +16,7 @@ const HEAD_SIGNED_D = 'M11.5 34L21.4593 49.75H1.54071L11.5 34Z'
 const HEAD_SPOKEN_D = 'M88.5 65L78.5407 49.25L98.4593 49.25L88.5 65Z'
 
 // public/wordmark.svg-nin dəyişməz kopyası (hero.js-in özünün eyni prinsiplə
-// WORDMARK_MARKUP-u kimi) — currentColor ilə əlaqə/footer bölməsində böyük,
+// WORDMARK_MARKUP-u kimi) - currentColor ilə əlaqə/footer bölməsində böyük,
 // fon elementi kimi (aşağı opasitiya, bulanıq). viewBox 0 0 81 24 (əsl fayl
 // ilə eyni).
 const CONTACT_WORDMARK_MARKUP = `
@@ -28,7 +28,7 @@ const CONTACT_WORDMARK_MARKUP = `
   <path d="M3.84 14.7838C3.84 17.7598 5.6 19.5198 8.256 19.5198C10.208 19.5198 11.648 18.5918 12.32 16.9598H16.32C15.456 20.6718 12.48 23.0398 8.288 23.0398C3.328 23.0398 0 19.7118 0 14.7518C0 9.82383 3.328 6.52783 8.288 6.52783C12.448 6.52783 15.456 8.86383 16.288 12.5118H12.288C11.616 10.9438 10.176 10.0478 8.256 10.0478C5.6 10.0478 3.84 11.8078 3.84 14.7838Z" fill="currentColor"/>
 `
 
-// side: 'left' | 'right' — dekor ekran kənarına yapışır (bax content.css
+// side: 'left' | 'right' - dekor ekran kənarına yapışır (bax content.css
 // .section-bg--left/--right).
 function logoBackgroundMarkup(side) {
   return `
@@ -89,12 +89,12 @@ export const contentMarkup = `
       <p class="problem__paragraph">
         Eşitmə məhdudiyyəti ilə doğulan insan Azərbaycan dilini heç vaxt eşitmir.
         Onu ikinci dil kimi öyrənir. Poliklinikada anket doldurmaq, bank
-        müqaviləsi oxumaq — bunlar onun üçün yad dildə sənəd doldurmaqdır.
+        müqaviləsi oxumaq - bunlar onun üçün yad dildə sənəd doldurmaqdır.
       </p>
       <p class="problem__paragraph">
         Mövcud əlçatanlıq alətləri isə yalnız bir istiqamətdə işləyir: eşidəndən
-        eşitmə məhdudiyyətli şəxsə. Altyazı var. Əks istiqamət — jest dilində
-        deyilənin eşidənə çatması — tamamilə boşdur.
+        eşitmə məhdudiyyətli şəxsə. Altyazı var. Əks istiqamət - jest dilində
+        deyilənin eşidənə çatması - tamamilə boşdur.
       </p>
     </div>
   </div>
@@ -107,7 +107,7 @@ export const contentMarkup = `
       <h3 class="difference__item-title">Bir skelet, iki istiqamət</h3>
       <p class="difference__item-desc">
         Tanıma və istehsal ayrı sistemlər deyil. Hər ikisi eyni skelet
-        təsvirindən qidalanır — kameradan çıxarılan nöqtələr həm jesti
+        təsvirindən qidalanır - kameradan çıxarılan nöqtələr həm jesti
         oxumaq, həm də avatarı hərəkətə gətirmək üçün işlədilir. Bu, iki
         istiqamətin uyğunluğunu arxitektura səviyyəsində təmin edir.
       </p>
@@ -118,7 +118,7 @@ export const contentMarkup = `
         Jest dilində inkar, sual və şərt üz və baş hərəkətləri ilə ötürülür.
         Sahənin aparıcı kommersiya oyunçusu bu elementlərin səlis
         istehsalını həll olunmamış problem kimi elan edir. Bizdə bu,
-        sonradan gələcək yaxşılaşdırma deyil — arxitekturanın başlanğıc
+        sonradan gələcək yaxşılaşdırma deyil - arxitekturanın başlanğıc
         tələbidir.
       </p>
     </div>
@@ -191,7 +191,7 @@ export const contentMarkup = `
   <div class="results__accuracy">
     <p class="results__accuracy-number">84,85%</p>
     <p class="results__accuracy-desc">
-      AzSLD — 30 000 annotasiyalı video üzərində öyrədilmiş tanıma
+      AzSLD - 30 000 annotasiyalı video üzərində öyrədilmiş tanıma
       modelimizin dəqiqliyi.
     </p>
     <p class="results__accuracy-caveat">
@@ -296,7 +296,7 @@ export const contentMarkup = `
   <div class="trust__intro">
     <h2 id="trust-heading" class="trust__heading">Arxamızda nə dayanır</h2>
     <p class="trust__lead">
-      Chevir sıfırdan başlamır — arxasında dərc olunmuş tədqiqat, açıq dataset
+      Chevir sıfırdan başlamır - arxasında dərc olunmuş tədqiqat, açıq dataset
       və icma ilə real əməkdaşlıq var.
     </p>
   </div>
@@ -369,7 +369,7 @@ export const contentMarkup = `
   <div class="contact__content">
     <h2 id="contact-heading" class="contact__heading">Bizə nə lazımdır</h2>
     <ul class="contact__asks">
-      <li>Pilot tərəfdaşlar — dövlət qurumu, bank və ya xəstəxana.</li>
+      <li>Pilot tərəfdaşlar - dövlət qurumu, bank və ya xəstəxana.</li>
       <li>Eşitmə məhdudiyyətli icma ilə davamlı əməkdaşlıq.</li>
     </ul>
     <a class="contact__cta" href="mailto:devteam@chevirapp.com">devteam@chevirapp.com</a>
@@ -437,7 +437,7 @@ function setupResultsVideos() {
 }
 
 // Fərqli sürətdə, scroll-scrub ilə idarə olunan fon dekorları (tam loqo
-// forması / əl nöqtə buludu). Avtomatik hərəkət yoxdur — yalnız scroll ilə.
+// forması / əl nöqtə buludu). Avtomatik hərəkət yoxdur - yalnız scroll ilə.
 // "logo" tipi ardıcıl bölmələrdə istiqaməti növbələşir (saat / saat əksinə).
 const SECTION_BG_CONFIG = [
   { selector: '.problem', type: 'logo', rotate: 150 },
@@ -464,7 +464,7 @@ function setupSectionBackgrounds() {
     if (type === 'logo') {
       // Mərkəzi nöqtə (viewBox 50,50) ətrafında fırlanır. CSS transform-box:
       // view-box etibarsız çıxdı (qrupu SVG-nin öz sərhədindən kənara
-      // fırladıb görünməz edirdi) — svgOrigin GSAP-ın SVG-üçün xüsusi,
+      // fırladıb görünməz edirdi) - svgOrigin GSAP-ın SVG-üçün xüsusi,
       // etibarlı mexanizmidir (preloader.js-də də eyni texnika işlədilib).
       const group = section.querySelector('.section-bg__logo-group')
       gsap.fromTo(
@@ -486,16 +486,16 @@ function setupSectionBackgrounds() {
 // .section-bg-lər dar (max-width) mərkəzləşmiş bölmələrin içindən ekranın
 // həqiqi kənarına "full-bleed" çıxır. CSS-də 100vw/-50vw ilə edilsəydi,
 // klassik scroll zolaqlı brauzerlərdə (100vw zolağı daxil edir,
-// clientWidth isə yox) səhifədə üfüqi scroll yaranardı — bax content.css-
+// clientWidth isə yox) səhifədə üfüqi scroll yaranardı - bax content.css-
 // dəki şərh. Əvəzinə clientWidth-ə əsaslanan piksel dəyərləri JS ilə tətbiq
 // olunur.
 //
-// Bu tək başına kifayət deyildi — səbəb TİMİNQ idi: bu funksiya səhifə
+// Bu tək başına kifayət deyildi - səbəb TİMİNQ idi: bu funksiya səhifə
 // yüklənən kimi işə düşür, o an hələ `html.preloading` aktivdir (base.css:
 // `overflow:hidden`), yəni səhifə hələ scroll-lana bilməz və brauzer heç bir
-// scroll zolağı ayırmır — clientWidth bu anda TAM pəncərə enidir. Preloader
+// scroll zolağı ayırmır - clientWidth bu anda TAM pəncərə enidir. Preloader
 // bitəndə `preloading` sinfi silinir, səhifə real scroll-lanan olur və
-// (klassik/enlik tutan scroll zolaqlı sistemlərdə) zolaq görünür —
+// (klassik/enlik tutan scroll zolaqlı sistemlərdə) zolaq görünür -
 // clientWidth bir neçə piksel KİÇİLİR, amma artıq tətbiq olunmuş inline
 // width/left köhnə (daha geniş) ölçüdə qalıb qalır. ResizeObserver
 // documentElement-in content-box ölçüsündəki İSTƏNİLƏN dəyişikliyi (window
