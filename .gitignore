@@ -30,3 +30,6 @@ dist-ssr
 
 # Lokal layihə təlimatı — repo-da paylaşılmır
 CLAUDE.md
+
+# Lokal Claude Code konfiqurasiyası və skill-lər
+.claude/
